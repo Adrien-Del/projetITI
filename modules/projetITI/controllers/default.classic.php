@@ -29,10 +29,6 @@ class defaultCtrl extends jController {
         //$listeregion = $regionfactory->findAll();
         //$rep->body->assign('REGION', $listeregion);
 
-        //factory des restaurants
-        //$restofactory = jDao::get("restaurant");
-        //$listeresto = $restofactory->findAll();
-        //$rep->body->assign('RESTO', $listeresto);
 
 
         //$rep->body->assign('IMG',jApp::config()->urlengine['basePath'].'images/');

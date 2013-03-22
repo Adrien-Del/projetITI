@@ -12,8 +12,8 @@
              <a class="brand" href="#">Mangez-moi</a>
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                     <ul class="nav">
-                      <li class="active"><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>
-                      <li><a href="{jurl 'projetITI~afficher_commande@classic'}">Commande</a></li>
+                      <li><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>
+                      <li class="active"><a href="{jurl 'projetITI~afficher_commande@classic'}">Commande</a></li>
                       <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -31,8 +31,7 @@
 
 
  <!--test de génération d'url pour afficher des images -->
- 
- {foreach $IMAGES as $COURANTIMAGE}
-     {image $PATH.$COURANTIMAGE->Emplacement}
-{/foreach}
+
+     {image $PATH.$IMAGES->Emplacement}
+
  </body>

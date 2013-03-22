@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="post" realname="post" primarykey="Idpost" />
+    </datasources>
+    <record>
+        <property name="Idpost" fieldname="Idpost" datatype="int" autoincrement="true"/>
+        <property name="Nom" fieldname="Nom" datatype="varchar" required="true" maxlength="50"/>
+        <property name="Contenu" fieldname="Contenu" datatype="varchar" default="" maxlength="300"/>
+        <property name="DateCreation" fieldname="DateCreation" datatype="date" required="true"/>
+        <property name="Online" fieldname="Online" datatype="tinyint" required="true"/>
+        <property name="Type" fieldname="Type" datatype="varchar" required="true" maxlength="50"/>
+        <property name="Emplacement" fieldname="Emplacement" datatype="varchar" default="" maxlength="200"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+    </record>
+    <factory>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>

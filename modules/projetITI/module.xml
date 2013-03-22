@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="http://jelix.org/ns/module/1.0">
-    <info id="projetITI@yourwebsite.undefined" name="projetITI" createdate="2013-02-26">
-        <version date="2013-02-26">0.1pre</version>
+    <info id="projetITI@yourwebsite.undefined" name="projetITI" createdate="2013-03-22">
+        <version date="2013-03-22">0.1pre</version>
         <label lang="en_US">projetITI</label>
         <description lang="en_US" />
         <license URL="">All rights reserved</license>

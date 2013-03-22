@@ -23,19 +23,38 @@ class defaultCtrl extends jController {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.min.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
       
-        $rep->body->assign('TITLE','Bienvenue sur le site de Mangez-Moi');
-        $rep->body->assign('CONTENT','Nous sommes heureux de vous acceuillir');
-
-        //factory des régions
-        //$regionfactory = jDao::get("region");
-        //$listeregion = $regionfactory->findAll();
-        //$rep->body->assign('REGION', $listeregion);
-
-
-
-        //$rep->body->assign('IMG',jApp::config()->urlengine['basePath'].'images/');
+        //test de génération d'url pour afficher des images
+        $imagefactory = jDao::get("post");
+        $listeimage = $imagefactory->findAll();
+        $rep->body->assign('IMAGES', $listeimage);
+        
+        $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
        
 
         return $rep;
     }
+    
+     function afficher_commande() {
+         $rep = $this->getResponse('html');
+         
+         $rep->bodyTpl ="commande";
+         
+                 //Ajout de balise <meta> pour le responsive design
+        $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+        //CSS et JS externe
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        
+        //test de génération d'url pour afficher des images
+        $imagefactory = jDao::get("post");
+        $image = $imagefactory->get(1);
+        $rep->body->assign('IMAGES', $image);
+        $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
+       
+
+        return $rep;
+        
+     }
 }

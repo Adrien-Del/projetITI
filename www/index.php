@@ -1,4 +1,4 @@
-    <?php
+<?php
 /**
 * @package   projetITI
 * @subpackage 
@@ -19,6 +19,4 @@ jApp::setCoord(new jCoordinator());
 jApp::coord()->process(new jClassicRequest());
 
 
-//knjhunhbgucvfycjhbjhcfvtychgvjhvtgc
-// test
-   // test2
+

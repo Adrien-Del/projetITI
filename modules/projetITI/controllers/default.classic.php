@@ -15,6 +15,8 @@ class defaultCtrl extends jController {
 
         $rep->bodyTpl = "main";
 
+        //Ajout de balise <meta> pour le responsive design
+        $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
         //CSS et JS externe
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');

@@ -42,12 +42,14 @@ class defaultCtrl extends jController {
                  //Ajout de balise <meta> pour le responsive design
         $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
         //CSS et JS externe
+        
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
-        $rep->addCssLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.css');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso.js');
         
         //test de génération d'url pour afficher des images

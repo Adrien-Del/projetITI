@@ -38,7 +38,7 @@
   
 <div class="gridster">
     <ul>
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"> hjbhj hgj ghj gjh g</li>
         <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
         <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
  

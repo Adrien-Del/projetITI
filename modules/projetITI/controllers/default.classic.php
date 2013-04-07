@@ -20,7 +20,7 @@ class defaultCtrl extends jController {
         //CSS et JS externe
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
       
         //test de génération d'url pour afficher des images
@@ -44,8 +44,11 @@ class defaultCtrl extends jController {
         //CSS et JS externe
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.min.js');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.css');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso.js');
         
         //test de génération d'url pour afficher des images
         $imagefactory = jDao::get("post");

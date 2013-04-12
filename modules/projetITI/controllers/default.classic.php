@@ -23,9 +23,15 @@ class defaultCtrl extends jController {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
       
-        //test de génération d'url pour afficher des images
+        //test de génération d'url pour afficher les images du caroussel
         $imagefactory = jDao::get("post");
-        $listeimage = $imagefactory->findAll();
+               //Création de la condition
+               $condition = jDao::createConditions();
+               $type_Caroussel= "Caroussel";
+               $condition->addCondition('Type','=',$type_Caroussel);
+               $condition->addCondition('Online','=',1);
+        
+        $listeimage = $imagefactory->findBy($condition);
         $rep->body->assign('IMAGES', $listeimage);
         
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);

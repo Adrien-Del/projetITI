@@ -21,18 +21,48 @@
     </div>
 </div>
     
-    
+  <!-- Mise en place du carousel -->
   <div class="container">
     <div class="row-fluid">
-    <div class="span4">1er contenu</div>
-    <div class="span8"></div>
-</div>
+               <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    
+                     {foreach $IMAGES as $COURANTIMAGE}
+                         <div class="item">
+                            <img src="{$PATH.$COURANTIMAGE->Emplacement}" alt="">
+                            <div class="carousel-caption">
+                              <h4>First Thumbnail label</h4>
+                              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            </div>
+                          </div>
+                      {/foreach}
+                      
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+              </div>
+    </div>
   </div>
 
 
+                      
+ <script type="text/javascript">
+   {literal}
+     $('.carousel').carousel('next');
+         
+     $('.carousel').carousel({
+
+        interval: 4000
+  
+      })
+   {/literal}
+  </script>
  <!--test de génération d'url pour afficher des images -->
  
- {foreach $IMAGES as $COURANTIMAGE}
-     {image $PATH.$COURANTIMAGE->Emplacement}
-{/foreach}
+
  </body>

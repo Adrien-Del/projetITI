@@ -24,38 +24,29 @@
     
   <div class="container">
     <div class="row-fluid">
-    <div class="span4">1er contenu</div>
-    <div class="span8"></div>
+        <div class="gridster">
+            <ul>
+                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+                <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+                <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+                <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
+                <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
+
+                <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+                <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
+                <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+
+                <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
+                <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
+
+                <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
+                <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
+            </ul>
+        </div>
+    </div>
 </div>
-  </div>
-
-
- <!--test de génération d'url pour afficher des images -->
-
-     {image $PATH.$IMAGES->Emplacement}
-     
-  <!-- Mise en place du grid -->
-  
-<div class="gridster">
-    <ul>
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
-        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
-        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
- 
-        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
-        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
- 
-        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
-        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
-        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
- 
-        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
-        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
- 
-        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
-        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
-    </ul>
-</div>
+        
 
 
  </body>

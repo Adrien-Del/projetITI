@@ -50,6 +50,7 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'gridster/jquery.gridster.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'style.css');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso.js');
         
         //test de génération d'url pour afficher des images

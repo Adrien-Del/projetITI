@@ -34,6 +34,17 @@ class defaultCtrl extends jController {
         $listeimage = $imagefactory->findBy($condition);
         $rep->body->assign('IMAGES', $listeimage);
         
+        
+        $imagefactory2=jDao::get("post");
+               $condition2 = jDao::createConditions();
+               $type_Presentation= "presentation";
+               $condition2->addCondition('Type','=',$type_Presentation);
+               $condition2->addCondition('Online','=',1);
+         $listeimage2 = $imagefactory2->findBy($condition2);
+         $rep->body->assign('IMG', $listeimage2);
+
+        
+              
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
        
 

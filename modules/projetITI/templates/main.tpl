@@ -48,6 +48,39 @@
               </div>
     </div>
   </div>
+   
+      <!-- Mise en place de la présentation en bas -->
+                      <div class="row-fluid">
+                          <ul class="thumbnails">
+                              {foreach $IMG as $COURANTIMG}
+                              <li class="span4">
+                                  <div class="thumbnail">
+                                      
+                                          <div class="item">
+                                              <img src="{$PATH.$COURANTIMG->Emplacement}" alt="">
+                                          <div class="caption">
+                    <h3>{$COURANTIMG->Contenu}</h3>
+                    <p></p>
+                    <p><a href="#" class="btn btn-primary">On y va !</a></p>
+                  </div>
+
+                                          </div>
+                                  </div>
+                              </li>
+                              {/foreach}
+                                                       
+                              
+                          
+                          
+                          </ul>
+                      
+                      
+                      
+                      </div>
+                      
+                      
+                      
+               
 
 
                       

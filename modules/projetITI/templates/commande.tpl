@@ -14,7 +14,7 @@
                     <ul class="nav">
                       <li><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>
                       <li class="active"><a href="{jurl 'projetITI~afficher_commande@classic'}">Commande</a></li>
-                      <li><a href="#">Contact</a></li>
+                      <li><a href="{jurl 'projetITI~contacter@classic'}">Contact</a></li>
                     </ul>
                 </div>
           </div>

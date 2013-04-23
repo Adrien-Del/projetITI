@@ -86,4 +86,18 @@ class defaultCtrl extends jController {
         return $rep;
         
      }
-}
+     
+     function contacter() {
+         $rep = $this->getResponse('html');
+         
+         $rep->bodyTpl ="contact";
+         
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'style3.css');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        
+        
+        return $rep;
+}}

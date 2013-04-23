@@ -45,20 +45,7 @@
            <div class="span10">
                <section class="demo">   
             <div class="gridster">
-                <ul><!--
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="2" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="2" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="3" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="3" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="4" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="5" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="6" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="7" data-sizex="1" data-sizey="1"></li>
-                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="7" data-sizex="1" data-sizey="1"></li>
-                    -->
+                <ul>
                     {foreach $MENU as $COURANTMENU}
                      <li onclick="getElements()" nom-produit="{$COURANTMENU->NomProduit}" prix="{$COURANTMENU->Prix}" data-row="1" data-col="2" data-sizex="1" data-sizey="1">
                      <img src="{$PATH.$COURANTMENU->Emplacement}" alt="">

@@ -1,0 +1,6 @@
+div.gridster li {
+    list-style-type: none;
+    background-color: lightgray;
+    border-radius: 20px;
+    
+}

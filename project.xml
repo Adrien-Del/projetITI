@@ -3,20 +3,20 @@
     <info id="projetITI@yourwebsite.undefined" name="projetITI" createdate="2013-03-22">
         <version date="2013-03-22">0.1pre</version>
         <label lang="en_US">projetITI</label>
-        <description lang="en_US"></description>
+        <description lang="en_US"/>
         <license URL="">All rights reserved</license>
         <copyright>2011 your name</copyright>
-        <creator name="your name" email="your-email@yourwebsite.undefined" active="true" />
+        <creator name="your name" email="your-email@yourwebsite.undefined" active="true"/>
         <homepageURL>http://www.yourwebsite.undefined</homepageURL>
     </info>
     <dependencies>
-        <jelix minversion="1.5.0" maxversion="1.5.*" />
+        <jelix minversion="1.5.0" maxversion="1.5.*"/>
     </dependencies>
     <entrypoints>
         <!-- file: the path to the entry point relative to the base path
             config: the path to the config file used by the entry point, relative
                     to var/config/
             type: type of the entry point : classic, cmdline, xmlrpc....-->
-        <entry file="index.php" config="index/config.ini.php" />
-    </entrypoints>
+        <entry file="index.php" config="index/config.ini.php"/>
+    <entry file="admin.php" config="admin/config.ini.php" type="classic"/></entrypoints>
 </project>

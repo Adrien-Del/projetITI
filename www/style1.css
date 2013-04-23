@@ -1,6 +1,84 @@
-div.gridster li {
-    list-style-type: none;
-    background-color: lightgray;
-    border-radius: 20px;
-    
+ul, ol {
+    list-style: none;
+}
+
+/* Gridster styles */
+.demo {
+    margin: 0 0;
+    padding: 7.5em 0 5.5em;
+    background: #942B07;
+}
+
+.demo:hover .gridster {
+    opacity: 1;
+}
+
+.gridster {
+    width: 1200px;
+    margin: 0 auto;
+
+    opacity: .8;
+
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6; 
+    -ms-transition: opacity .6s;
+;    transition: opacity .6s;
+}
+
+.gridster .gs_w {
+    background: #FFF;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.gridster .player {
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+.gridster .gs_w.try {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 37px -169px;
+
+}
+
+.gridster .preview-holder {
+    border: none!important;
+    border-radius: 0!important;
+    background: rgba(255,255,255,.2)!important;
+}
+
+#banniere {
+	display: block;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+        
+}
+
+.img_grid {
+	display: block;
+	max-height: 200px;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#carous {
+	background-color: white;
+
+   }
+
+.hero-unit {
+	margin-top: 500px;
+}
+
+.center {
+    text-align: center;
 }

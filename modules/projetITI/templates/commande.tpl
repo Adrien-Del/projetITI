@@ -21,32 +21,57 @@
     </div>
 </div>
     
-    
-  <div class="container">
+    <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="span10">
+      <!--Body content-->
+    </div>
+  </div>
+        
+</div>
+  <div class="container-fluid">
     <div class="row-fluid">
-        <div class="gridster">
-            <ul>
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
-                <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
-                <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
-
-                <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
-                <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
-
-                <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
-                <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
-                <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
-
-                <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
-                <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
-
-                <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
-                <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
-            </ul>
+        <!-- Colonne total de la commande -->
+        <div class="span2" id="total">
+        <h4> Résumé de votre commande </h4>
+        <p id="resume">Résumé à afficher ici</p>
+       
+        <button type="button" class="btn" data-toggle="button">Lancer commande</button>
+        </div>
+        <!-- Gridster -->
+           <div class="span10">
+               <section class="demo">   
+            <div class="gridster">
+                <ul><!--
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="2" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="2" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="3" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="3" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="4" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="5" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="6" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="1" data-col="7" data-sizex="1" data-sizey="1"></li>
+                    <li onclick="getElements()" nom-produit="Kebab" prix="5" data-row="2" data-col="7" data-sizex="1" data-sizey="1"></li>
+                    -->
+                    {foreach $MENU as $COURANTMENU}
+                     <li onclick="getElements()" nom-produit="{$COURANTMENU->NomProduit}" prix="{$COURANTMENU->Prix}" data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+                     <img src="{$PATH.$COURANTMENU->Emplacement}" alt="">
+                     </li>
+                        
+                    {/foreach}
+                </ul>
+            </div>
+                </section>
         </div>
     </div>
 </div>
-        
+                      
 
 
  </body>

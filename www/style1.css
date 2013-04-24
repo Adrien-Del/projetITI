@@ -82,3 +82,14 @@ ul, ol {
 .center {
     text-align: center;
 }
+
+.image_menu {
+    height: 30px;
+    margin: 0px 0px 0px;
+    text-align: center;
+}
+
+.input_number {
+    height: 15px;
+    width: 40px;
+}

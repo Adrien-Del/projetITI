@@ -1,3 +1,5 @@
+var quantity = 1;
+
 $(function(){ //DOM Ready
  
     $(".gridster ul").gridster({
@@ -22,3 +24,12 @@ function getElements() {
       $('#resume').html(texte);
     }
   };
+  
+  
+  
+  function increaseQuantity() {
+      var texte ="Quantité : ";
+      quantity++;
+      texte += quantity;
+      $('.image_menu').html(texte);
+  }

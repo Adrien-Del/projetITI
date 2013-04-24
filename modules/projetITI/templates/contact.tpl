@@ -30,7 +30,6 @@
       </div>
 
         <div class="span9">
-				<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mangez+moi,+Rue+L%C3%A9on+Gambetta,+Lille,+France&amp;aq=&amp;sll=43.936874,-44.360668&amp;sspn=54.201302,114.169922&amp;t=h&amp;ie=UTF8&amp;hq=Mangez+moi,&amp;hnear=Rue+L%C3%A9on+Gambetta,+Lille,+Nord,+Nord-Pas-de-Calais,+France&amp;cid=17974132289660504965&amp;ll=50.627197,3.048105&amp;spn=0.026135,0.054932&amp;z=14&amp;output=embed"></iframe><br><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Mangez+moi,+Rue+L%C3%A9on+Gambetta,+Lille,+France&amp;aq=&amp;sll=43.936874,-44.360668&amp;sspn=54.201302,114.169922&amp;t=h&amp;ie=UTF8&amp;hq=Mangez+moi,&amp;hnear=Rue+L%C3%A9on+Gambetta,+Lille,+Nord,+Nord-Pas-de-Calais,+France&amp;cid=17974132289660504965&amp;ll=50.627197,3.048105&amp;spn=0.026135,0.054932&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-		  </div>
+				<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=50.626482,3.047526&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=50.626482,3.047526&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small></div>
 		  </div>
 			</div>

@@ -57,7 +57,7 @@ class defaultCtrl extends jController {
          
          $rep->bodyTpl ="commande";
          
-                 //Ajout de balise <meta> pour le responsive design
+        //Ajout de balise <meta> pour le responsive design
         $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
         //CSS et JS externe
         
@@ -69,7 +69,7 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style1.css');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.0.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.1.js');
         
         //test de génération d'url pour afficher des images
         $imagefactory = jDao::get("post");

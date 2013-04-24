@@ -45,6 +45,7 @@
            <div class="span10">
                <section class="demo">   
             <div class="gridster">
+
                 <ul>
                     {foreach $MENU as $COURANTMENU}
                      <li onclick="getElements()" nom-produit="{$COURANTMENU->NomProduit}" prix="{$COURANTMENU->Prix}" data-row="1" data-col="2" data-sizex="1" data-sizey="1">

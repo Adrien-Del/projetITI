@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
              </a>
-             <a class="brand" href="#">Mangez-moi</a>
+             <a class="brand" href="{jurl 'projetITI~index@classic'}">Mangez-moi</a>
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                     <ul class="nav">
                       <li class="active"><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>
@@ -17,9 +17,23 @@
                       <li><a href="{jurl 'projetITI~contacter@classic'}">Contact</a></li>
                     </ul>
                 </div>
+                    
+                    <!-- demande de connection-->
+                    <form class="form-inline">
+  <input type="text" class="input-small" placeholder="Email">
+  <input type="password" class="input-small" placeholder="Password">
+  <label class="checkbox">
+    <input type="checkbox" > Se souvenir de moi
+    <li> <a href="{jurl 'projetITI~creercompte@classic'}">
+            Je n'ai pas de compte</a></li>
+    
+   </label>
+  <button type="submit" class="btn">Se connecter</button>
+</form>
           </div>
-    </div>
-</div>
+                    
+    </div>  
+      </div>
     
   <!-- Mise en place du carousel -->
   <div class="container">

@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
              </a>
-             <a class="brand" href="#">Mangez-moi</a>
+             <a class="brand" href="{jurl 'projetITI~index@classic'}">Mangez-moi</a>
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                     <ul class="nav">
                       <li><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>

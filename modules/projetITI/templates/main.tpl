@@ -22,9 +22,9 @@
                     <form class="form-inline">
   <input type="text" class="input-small" placeholder="Email">
   <input type="password" class="input-small" placeholder="Password">
-  <label class="checkbox">
-    <input type="checkbox" > Se souvenir de moi
-    <li> <a href="{jurl 'projetITI~creercompte@classic'}">
+  <label class="checkbox"  id="123">
+      <input type="checkbox" > Se Souvenir de moi
+      <li> <a href="{jurl 'projetITI~creercompte@classic'}">
             Je n'ai pas de compte</a></li>
     
    </label>

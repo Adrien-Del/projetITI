@@ -116,4 +116,10 @@ function creercompte() {
         
         return $rep;
 }
+
+function ajouterutilisateur() {
+    
+    
+    
+}
 }

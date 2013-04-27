@@ -36,7 +36,7 @@
     <div class="row-fluid">
         <!-- Colonne total de la commande -->
         <div class="span2" id="total">
-        <h4> Résumé de votre commande </h4>
+        <h4> Résumé de votre commande</h4>
         <p id="resume">Résumé à afficher ici</p>
        
         <button type="button" class="btn" data-toggle="button">Lancer commande</button>
@@ -51,7 +51,7 @@
                      <li onclick="getElements()" nom-produit="{$COURANTMENU->NomProduit}" prix="{$COURANTMENU->Prix}" data-row="1" data-col="2" data-sizex="1" data-sizey="1">
                      <p class="image_menu">{$COURANTMENU->NomProduit}</p>
                          <img src="{$PATH.$COURANTMENU->Emplacement}" alt="">
-                     <p class="image_menu">Quantité : <input type="number" name="quantity" min="1" max="5" class="input_number"></p>
+                     <p class="image_menu">Quantité : <input onclick="getQuantity()" type="number" name="quantity" min="1" max="5" class="input_number" id="{$IDMENU.$COURANTMENU->IdProduit}"></p>
                      
                      </li>
                     {/foreach}

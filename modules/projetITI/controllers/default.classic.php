@@ -80,6 +80,7 @@ class defaultCtrl extends jController {
         $menufactory = jDao::get("produit");
         $listemenu = $menufactory->findall();
         $rep->body->assign('MENU',$listemenu);
+        $rep->body->assign('IDMENU',"menu");
         
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
 

@@ -27,9 +27,8 @@ function getElements() {
   
   
   
-  function increaseQuantity() {
-      var texte ="Quantité : ";
-      quantity++;
-      texte += quantity;
-      $('.image_menu').html(texte);
+  function getQuantity() {
+     var nombre = 0;
+     nombre = document.getElementById(this.id).value;
+     $('')
   }

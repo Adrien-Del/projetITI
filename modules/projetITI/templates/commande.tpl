@@ -48,10 +48,10 @@
 
                 <ul>
                     {foreach $MENU as $COURANTMENU}
-                     <li onclick="getElements()" nom-produit="{$COURANTMENU->NomProduit}" prix="{$COURANTMENU->Prix}" data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+                     <li onclick="getElements()" nom-produit="{$COURANTMENU->NomProduit}" prix="{$COURANTMENU->Prix}" data-row="1" data-col="2" data-sizex="1" data-sizey="1" baseid="{$IDMENU.$COURANTMENU->IdProduit}">
                      <p class="image_menu">{$COURANTMENU->NomProduit}</p>
                          <img src="{$PATH.$COURANTMENU->Emplacement}" alt="">
-                     <p class="image_menu">Quantité : <input onclick="getQuantity()" type="number" name="quantity" min="1" max="5" class="input_number" id="{$IDMENU.$COURANTMENU->IdProduit}"></p>
+                     <p class="image_menu">Quantité : <input type="number" name="quantity" min="1" max="5" placeholder="1"  class="input_number"  id="{$IDMENU.$COURANTMENU->IdProduit}"></p>
                      
                      </li>
                     {/foreach}

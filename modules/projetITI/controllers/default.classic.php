@@ -15,6 +15,7 @@ class defaultCtrl extends jController {
       public $pluginParams = array(
             '*'        => array('auth.required' => false),
             'affiche1' => array('auth.required' => true),
+            'afficher_commande' => array('auth.required' => true),
       );
   
     //Fonction principale, index
@@ -24,6 +25,7 @@ class defaultCtrl extends jController {
         $rep->bodyTpl = "main";
 
         //Ajout de balise <meta> pour le responsive design
+        $rep->title = "Mangez-Moi";
         $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
         //CSS et JS externe
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
@@ -52,10 +54,13 @@ class defaultCtrl extends jController {
          $listeimage2 = $imagefactory2->findBy($condition2);
          $rep->body->assign('IMG', $listeimage2);
 
-         $users=jDao::get("jlx_user");
-         $user = $users->findAll();
-         $rep->body->assign('USER', $user);
-              
+        
+         
+         $testconnection = jAuth::isConnected();
+         $rep->body->assign('isLogged',$testconnection);
+         $user2 = jAuth::getUserSession();
+         $rep->body->assign('user',$user2);
+         
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
        
 
@@ -151,6 +156,8 @@ function index2(){
     $rep->bodyTpl = 'main2';
  
     $tpl = new jTpl();
+    
+    
     $rep->body->assign('MAIN', '<p>Contenu de la page d\'accueil.</p>');
  
     return $rep;
@@ -165,7 +172,7 @@ function index2(){
 
 function affiche1(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     $tpl = new jTpl();
     $rep->body->assign('MAIN', $tpl->fetch('projetITI~affichage1'));
@@ -179,7 +186,7 @@ function affiche1(){
   */
   function affiche2(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     // utilisation de jAuth::isConnected pour savoir si l'utilisateur
     // est actuellement identifié ou pas
@@ -197,7 +204,7 @@ function affiche1(){
   */ 
   function changePwd(){  
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main'; 
+    $rep->bodyTpl = 'main2'; 
  
     jAuth::changePassword('user10','jelix');
     $rep->body->assign('MAIN', 'Le mot de passe du "user10" à été modifié'); 
@@ -210,7 +217,7 @@ function affiche1(){
   */
   function listusers(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     $content = 'Les users enregistrés sont:<br />';
     $users = jAuth::getUserList();
@@ -227,7 +234,7 @@ function affiche1(){
   */  
   function getCurrentUser(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     try{
       $user = jAuth::getUserSession();
@@ -244,7 +251,7 @@ function affiche1(){
   */        
   function getUser(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     try{
       $user = jAuth::getUser('user100');
@@ -268,7 +275,7 @@ function affiche1(){
   */
   function verifiePwd(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     $r = jAuth::verifyPassword('user100', $this->param('password'));
     if(!$r){
@@ -285,7 +292,7 @@ function affiche1(){
   */
   function createUser(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     // creation d'un user avec le login tempuser et le mot de passe pwtempuser       
     $newUser = jAuth::createUserObject('tempuser','pwtempuser');
@@ -306,7 +313,7 @@ function affiche1(){
   */
   function updateUser(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     $updUser = jAuth::getUser('tempuser');
     if($updUser){
@@ -332,7 +339,7 @@ function affiche1(){
   */
   function deleteUser(){
     $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main';
+    $rep->bodyTpl = 'main2';
  
     if(jAuth::getUser('tempuser')){
       if(jAuth::removeUser('tempuser')){
@@ -347,4 +354,12 @@ function affiche1(){
     return $rep;
   }
  
+  
+  
+  function AuthErrorLogin ()
+{
+$rep = $this->getResponse('html');
+$rep->body->assign('failed', 1);
+return $rep;
+}
 }

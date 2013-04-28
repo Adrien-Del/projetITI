@@ -44,7 +44,9 @@ class defaultCtrl extends jController {
          $listeimage2 = $imagefactory2->findBy($condition2);
          $rep->body->assign('IMG', $listeimage2);
 
-        
+         $users=jDao::get("jlx_user");
+         $user = $users->findAll();
+         $rep->body->assign('USER', $user);
               
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
        
@@ -118,9 +120,7 @@ function creercompte() {
         return $rep;
 }
 
-function ajouterutilisateur() {
-    
-    
+function LoginUtilisateur() {
     
 }
 }

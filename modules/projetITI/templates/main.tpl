@@ -19,16 +19,15 @@
                 </div>
                     
                     <!-- demande de connection-->
-                    <form class="form-inline">
-  <input type="text" class="input-small" placeholder="Email">
-  <input type="password" class="input-small" placeholder="Password">
-  <label class="checkbox"  id="123">
-      <input type="checkbox" > Se Souvenir de moi
-      <li> <a href="{jurl 'projetITI~creercompte@classic'}">
-            Je n'ai pas de compte</a></li>
-    
+   <form class="form-inline">
+        <input type="text" class="input-small" placeholder="Pseudo">
+        <input type="password" class="input-small" placeholder="Mot de passe">
+  <label class="checkbox"  id="123" style="color:white;">
+    <input type="checkbox" > Se Souvenir de moi </input>
    </label>
-  <button type="submit" class="btn">Se connecter</button>
+    <button type="submit" class="btn">Se connecter</button>
+    <a href="{jurl 'projetITI~LoginUtilisateur@classic'}" class="btn">S'inscrire</a>
+    <a href="{jurl 'jauth~login:form'}" class="btn">S'inscrire</a>
 </form>
           </div>
                     
@@ -88,7 +87,12 @@
    </div>
        
                       
-                      
+<!-- test user -->
+<div> {foreach $USER as $COURANTUSER}
+
+<p>{$COURANTUSER->login}</p>
+{/foreach}
+</div>
                       
                
 

@@ -26,7 +26,7 @@
     <input type="checkbox" > Se Souvenir de moi </input>
    </label>
     <button type="submit" class="btn">Se connecter</button>
-    <a href="{jurl 'projetITI~LoginUtilisateur@classic'}" class="btn">S'inscrire</a>
+    <a href="{jurl 'projetITI~index2@classic'}" class="btn">S'inscrire</a>
     <a href="{jurl 'jauth~login:form'}" class="btn">S'inscrire</a>
 </form>
           </div>

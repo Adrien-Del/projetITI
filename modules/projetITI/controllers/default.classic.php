@@ -57,13 +57,10 @@ class defaultCtrl extends jController {
         
          
          $testconnection = jAuth::isConnected();
-         $rep->body->assign('isLogged',$testconnection);
          $user2 = jAuth::getUserSession();
-         $rep->body->assign('user',$user2);
-         
-        $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
+       $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
        
-
+        $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
         return $rep;
     }
     
@@ -97,6 +94,10 @@ class defaultCtrl extends jController {
         $rep->body->assign('MENU',$listemenu);
         $rep->body->assign('IDMENU',"menu");
         
+         $testconnection = jAuth::isConnected();
+         $user2 = jAuth::getUserSession();
+       $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
+        
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
 
         return $rep;
@@ -114,7 +115,10 @@ class defaultCtrl extends jController {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
         
-        
+        $testconnection = jAuth::isConnected();
+        $user2 = jAuth::getUserSession();
+        $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
+       
         return $rep;
 }
 

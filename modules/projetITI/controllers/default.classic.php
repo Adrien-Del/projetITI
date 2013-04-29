@@ -380,5 +380,9 @@ return $rep;
       jAuth::saveNewUser($newUser);
       return $this->index();
   }
-  
+  function envoyermail (){
+      
+      
+      
+  }
 }

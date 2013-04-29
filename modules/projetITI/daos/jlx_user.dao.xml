@@ -7,6 +7,9 @@
 <property name="login" fieldname="usr_login" required="yes" datatype="string" maxlength="50" />
 <property name="email" fieldname="usr_email" datatype="string" required="yes" maxlength="255" />
 <property name="password" fieldname="usr_password" datatype="string" maxlength="50" selectpattern="%s" updatepattern="" insertpattern="%s" />
+<property name="nom" fieldname="usr_nom" datatype="string" required="yes" maxlength="50" />
+<property name="prenom" fieldname="usr_prenom" datatype="string" required="yes" maxlength="50" />
+<property name="tel" fieldname="usr_tel" datatype="string" required="yes" maxlength="20" />
     </record>
     <factory>
         <method name="getByLoginPassword" type="selectfirst">

@@ -32,55 +32,9 @@
                     
                     <!-- Formulaire pour se créer un compte -->
                     
- <form class="form-horizontal">
-     <div class="control-group">
-    <label class="control-label" for="inputName">Votre nom</label>
-    <div class="controls">
-      <input type="text" id="inputName" placeholder="Nom" required>
-    </div>
-  </div>
-     <div class="control-group">
-    <label class="control-label" for="inputName">Votre prénom</label>
-    <div class="controls">
-      <input type="text" id="inputName" placeholder="Prénom" required>
-    </div>
-  </div>
-     <div class="control-group">
-    <label class="control-label" for="inputName">Nom d'utilisateur</label>
-    <div class="controls">
-      <input type="text" id="inputName" placeholder="Nom d'utilisateur" required>
-    </div>
-  </div>
-     <div class="control-group">
-    <label class="control-label" for="inputPhone">Votre numéro de téléphone</label>
-    <div class="controls">
-      <input type="text" id="inputPhone" placeholder="Téléphone">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">Email</label>
-    <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email" required>
-    </div>
-  </div>
-    <div class="control-group">
-    <label class="control-label" for="inputPassword">Mot de Passe</label>
-    <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Mot de passe" required>
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-     <button type="submit" class="btn">M'enregistrer</button>
-    </div>
-  </div>
-     
-</form>
+ {formfull $NEWUSER, 'projetITI~newUser@classic'}
                    
-                    
-                    
-          
-                    <p><strong> En cas de problème n'hésitez pas à nous contacter</strong> </p>
+     <p><strong> En cas de problème n'hésitez pas à nous contacter</strong> </p>
                  <div class="row-fluid">
 		<!-- Partie centrale -->
 			<div class="span3">

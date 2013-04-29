@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns="http://jelix.org/ns/forms/1.1">
+
+    
+                            <input ref="prenom">
+                                            <label>Prenom</label>
+		</input>
+                
+                             <input ref="nom">
+                                            <label>Nom</label>
+		</input>
+                
+		<input ref="login">
+			<label>Pseudo</label>
+		</input>
+
+		<input ref="email">
+			<label>E-mail</label>
+		</input>
+                
+                             <input ref="password">
+                                            <label>Mot de passe</label>
+		</input>
+
+                            <input ref="tel">
+                                            <label>Numéro de téléphone</label>
+		</input>
+                
+                            
+
+		<submit ref="submit">
+		<label>Ajouter</label>
+		</submit>
+
+		<reset ref="reinit">
+		<label>Réinitialiser</label>
+		</reset>
+</form>

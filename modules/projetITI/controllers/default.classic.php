@@ -134,6 +134,9 @@ function creercompte() {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
         
         
+        $userForm = jForms::create("projetITI~newUser");
+        $rep->body->assign('NEWUSER',$userForm);
+        
         return $rep;
 }
 
@@ -366,4 +369,16 @@ $rep = $this->getResponse('html');
 $rep->body->assign('failed', 1);
 return $rep;
 }
+
+
+  function newUser(){
+      $newUser = jAuth::createUserObject($this->param('login'),$this->param('password'));
+      $newUser->email = $this->param('email');
+      $newUser->nom = $this->param('nom');
+      $newUser->prenom = $this->param('prenom');
+      $newUser->tel = $this->param('tel');
+      jAuth::saveNewUser($newUser);
+      return $this->index();
+  }
+  
 }

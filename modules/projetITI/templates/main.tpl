@@ -29,7 +29,7 @@
           </div>          
     </div>  
       </div>
-    
+<div>{$LOGIN_ERREUR}</div>
   <!-- Mise en place du carousel -->
   <div class="container">
     <div class="row-fluid">

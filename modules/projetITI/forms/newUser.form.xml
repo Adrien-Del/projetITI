@@ -15,16 +15,19 @@
 			<label>Pseudo</label>
 		</input>
 
-		<input ref="email">
+		<input ref="email" type="email">
 			<label>E-mail</label>
+                                            <hint>L’email doit être valide</hint>
 		</input>
                 
-                             <input ref="password">
+                             <secret ref="password">
                                             <label>Mot de passe</label>
-		</input>
+                                            <confirm>Retapez votre mot de passe</confirm>
+		</secret>
 
                             <input ref="tel">
                                             <label>Numéro de téléphone</label>
+                                            <alert type="invalid">Le format de votre numéro de tééphone est invalide</alert>
 		</input>
                 
                             

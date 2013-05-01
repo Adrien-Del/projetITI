@@ -10,7 +10,6 @@
        {/if}
        <button class="btn" type="submit" value="{@jauth~auth.buttons.login@}">Se connecter</button>
        <a class="btn" href="{jurl 'projetITI~creercompte@classic'}">S'inscrire</a>
-       <a href="{jurl 'projetITI~index2@classic'}" class="btn">Jauth</a>
        
    </form>
        

@@ -21,8 +21,8 @@ class defaultCtrl extends jController {
     //Fonction principale, index
     function index() {
         $rep = $this->getResponse('html');
-
-        $rep->bodyTpl = "main";
+        $user2 = jAuth::getUserSession();
+       
 
         //Ajout de balise <meta> pour le responsive design
         $rep->title = "Mangez-Moi";
@@ -33,7 +33,22 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style3.css');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso2.js');
       
+        
+         if($user2->login==admin){
+            $rep->bodyTpl = "admin_main";
+            $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso3.js');
+            
+            $imagefactorycaroussel=jDao::get("post");
+               $conditioncaroussel = jDao::createConditions();
+               $conditioncaroussel->addCondition('Type','=',caroussel);
+               $conditioncaroussel->addCondition('Online','=',1);
+         $listeimagecaroussel = $imagefactorycaroussel->findBy($conditioncaroussel);
+         $rep->body->assign('IMGCAROUSSEL', $listeimagecaroussel);
+         
+        }
+        else{$rep->bodyTpl = "main";}
         //test de génération d'url pour afficher les images du caroussel
         $imagefactory = jDao::get("post");
                //Création de la condition
@@ -56,11 +71,21 @@ class defaultCtrl extends jController {
 
         
          
-         $testconnection = jAuth::isConnected();
-         $user2 = jAuth::getUserSession();
+       $testconnection = jAuth::isConnected();
+      
        $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
-       
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
+        
+        
+        $url = $_SERVER["REQUEST_URI"];
+        $urlquery = explode("failed=", parse_url($url,PHP_URL_QUERY));
+        if($urlquery[1]==1){
+            $rep->body->assignZone('LOGIN_ERREUR', 'loginerreur',array ('failed'=>2));
+        }
+        else{
+        }
+        
+        
         return $rep;
     }
     
@@ -366,7 +391,9 @@ function affiche1(){
   function AuthErrorLogin ()
 {
 $rep = $this->getResponse('html');
-$rep->body->assign('failed', 1);
+$failed = 2;
+$rep->body->assignZone('LOGIN_ERREUR', 'loginerreur',array ('failed'=>2));
+$rep->body->assign('failed', $failed);
 return $rep;
 }
 
@@ -380,9 +407,21 @@ return $rep;
       jAuth::saveNewUser($newUser);
       return $this->index();
   }
+<<<<<<< HEAD
   function envoyermail (){
       
       
       
   }
+=======
+  
+  function supprimerImage(){
+        $idImage =  $this->param('Idpost');
+        var_dump($idImage);
+        $imagefactory = jDao::get("post");
+        $imagefactory->delete($idImage);
+        return $this->index();
+    }
+  
+>>>>>>> [MAJ] repo
 }

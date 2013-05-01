@@ -29,34 +29,20 @@
           </div>          
     </div>  
       </div>
-    
+<div>{$LOGIN_ERREUR}</div>
   <!-- Mise en place du carousel -->
-  <div class="container">
-    <div class="row-fluid">
-               <div id="myCarousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                    
-                     {foreach $IMAGES as $COURANTIMAGE}
-                         <div class="item">
-                             <img src="{$PATH.$COURANTIMAGE->Emplacement}" alt="" width=" 100%">
-                            <div class="carousel-caption">
-                              <h4>First Thumbnail label</h4>
-                              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            </div>
-                          </div>
-                      {/foreach}
-                      
-                </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-              </div>
-    </div>
-  </div>
+  <h2> Gérer les photos du caroussel </h2>
+  <div class="row-fluid">
+            <ul class="thumbnails">
+                {foreach $IMGCAROUSSEL as $COURANTIMGCAROUSSEL}
+              <li class="span3">
+                <a href="#" class="thumbnail">
+                  <img  alt="260x180" style="width: 400px; height: 200px;" src="{$PATH.$COURANTIMGCAROUSSEL->Emplacement}" id="{$COURANTIMGCAROUSSEL->Idpost}"></a>
+              </li>
+              {/foreach}
+            </ul>
+          </div>
+                      <a> MODIFIER !! </a>
    
       <!-- Mise en place de la présentation en bas -->
   <div class="row-fluid">

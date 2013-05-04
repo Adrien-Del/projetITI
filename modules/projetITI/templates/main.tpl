@@ -45,8 +45,8 @@
                          <div class="item">
                              <img src="{$PATH.$COURANTIMAGE->Emplacement}" alt="" width=" 100%">
                             <div class="carousel-caption">
-                              <h4>First Thumbnail label</h4>
-                              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                              <h4>Voici les photos du restaurant</h4>
+                              <p>Le restaurant se trouve rue Léon Gambetta, au 365. Pour plus d'information allez dans l'onglet "contact"</p>
                             </div>
                           </div>
                       {/foreach}

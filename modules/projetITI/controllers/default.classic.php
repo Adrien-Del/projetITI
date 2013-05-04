@@ -47,6 +47,7 @@ class defaultCtrl extends jController {
          $listeimagecaroussel = $imagefactorycaroussel->findBy($conditioncaroussel);
          $rep->body->assign('IMGCAROUSSEL', $listeimagecaroussel);
          $menufactory = jDao::get("produit");
+<<<<<<< HEAD
         $listemenu = $menufactory->findall();
         $rep->body->assign('MENU',$listemenu);
          
@@ -60,6 +61,10 @@ class defaultCtrl extends jController {
         $rep->body->assign('NEWIMAGE',$imageForm);
 
 
+=======
+$listemenu = $menufactory->findall();
+$rep->body->assign('MENU',$listemenu);
+>>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
          
         }
         else{$rep->bodyTpl = "main";}

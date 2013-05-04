@@ -47,17 +47,9 @@
               </li>
             </ul>
           </div>
-<<<<<<< HEAD
 
-=======
-                      <a> MODIFIER !! </a>
-<<<<<<< HEAD
->>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
-=======
->>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
-                      
-                      
-                      <!-- Mise en place des images des commandes -->
+         
+    <!-- Mise en place des images des commandes -->
 <h2> Gérer les photos des produits dans la page "commande" </h2>
 <div class="row-fluid">
 
@@ -71,13 +63,7 @@
 {/foreach}
 </ul>
 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
-=======
->>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
    
       <!-- Mise en place de la présentation en bas -->
   <div class="row-fluid">

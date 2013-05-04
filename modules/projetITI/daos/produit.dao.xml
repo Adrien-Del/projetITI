@@ -6,7 +6,6 @@
     <record>
         <property name="IdProduit" fieldname="IdProduit" datatype="int" autoincrement="true"/>
         <property name="NomProduit" fieldname="NomProduit" datatype="varchar" required="true" maxlength="50"/>
-        <property name="Description" fieldname="Description" datatype="varchar" required="true" maxlength="200"/>
         <property name="Prix" fieldname="Prix" datatype="float" required="true"/>
         <property name="Emplacement" fieldname="Emplacement" datatype="varchar" required="true" maxlength="200"/>
         <!--<property name="" fieldname="" datatype="string/int/float/date"

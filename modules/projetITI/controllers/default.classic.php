@@ -55,6 +55,8 @@ class defaultCtrl extends jController {
         $imageForm = jForms::create("projetITI~newImage");
         $rep->body->assign('NEWIMAGE',$imageForm);
 
+        $menuForm = jForms::create("projetITI~afficherProduit");
+        $rep->body->assign('PRODUIT',$menuForm);
          
         }
         else{$rep->bodyTpl = "main";}
@@ -115,7 +117,7 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style1.css');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.1.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.2.js');
         
         //test de génération d'url pour afficher des images
         $imagefactory = jDao::get("post");
@@ -177,223 +179,6 @@ function creercompte() {
 function LoginUtilisateur() {
     
 }
-
-
-
-
-
-
-
-
-
-
-// ZONE DE TEST POUR LES LOGINS /!\
-
-
-
-
-function index2(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    $tpl = new jTpl();
-    
-    
-    $rep->body->assign('MAIN', '<p>Contenu de la page d\'accueil.</p>');
- 
-    return $rep;
-  }
-
-
-
-
-
-
-
-
-function affiche1(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    $tpl = new jTpl();
-    $rep->body->assign('MAIN', $tpl->fetch('projetITI~affichage1'));
- 
-    return $rep;
-  }
- 
-  /*
-  * Cette action accepte l'affichage du template affichage2 
-  * que si personne n'est connecté
-  */
-  function affiche2(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    // utilisation de jAuth::isConnected pour savoir si l'utilisateur
-    // est actuellement identifié ou pas
-    if(!jAuth::isConnected()){      
-        $tpl = new jTpl();
-        $rep->body->assign('MAIN', $tpl->fetch('projetITI~affichage2'));
-    }else{
-        $rep->body->assign('MAIN', 'L\'accès à cette page est refusé!! (si vous êtes connecté)'); 
-    }
-    return $rep;  	
-  }
- 
-  /*
-  * Change le mot de passe d'un user
-  */ 
-  function changePwd(){  
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2'; 
- 
-    jAuth::changePassword('user10','jelix');
-    $rep->body->assign('MAIN', 'Le mot de passe du "user10" à été modifié'); 
- 
-    return $rep; 
-  }
- 
-  /*
-  *  Affiche tous les users
-  */
-  function listusers(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    $content = 'Les users enregistrés sont:<br />';
-    $users = jAuth::getUserList();
-    foreach($users as $user){
-       $content .= $user->login . '<br />'; 
-    }
-    $rep->body->assign('MAIN', $content);
- 
-    return $rep; 
-  }   
- 
-  /*
-  * Affiche le user courrant de la session
-  */  
-  function getCurrentUser(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    try{
-      $user = jAuth::getUserSession();
-      $rep->body->assign('MAIN', "Le user courant est ".$user->login);
-    }catch(Exception $e){
-      $rep->body->assign('MAIN', 'Il n\'y a plus de user de connecté!');
-    }
- 
-    return $rep; 
-  }
- 
-  /*
-  * Récupère un user
-  */        
-  function getUser(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    try{
-      $user = jAuth::getUser('user100');
-      if($user){
-        $rep->body->assign('MAIN', '"user100" à été trouvé.');
-      }else{
-        $rep->body->assign('MAIN', '"user100" est introuvable.');
-      }
-    }catch(Exception $e){
-      $rep->body->assign('MAIN', 'Le user user100 n\a pus être trouvé!');
-    } 
- 
-    return $rep; 
-  }
- 
-  /*
-  * Vérifie le password d'un user
-  * Peut être utilisé lors d'un login
-  * Dans cet exemple le retour sera toujours un password non valide
-  * parce que l'appel à cette action n'a aucun paramètre...
-  */
-  function verifiePwd(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    $r = jAuth::verifyPassword('user100', $this->param('password'));
-    if(!$r){
-      $rep->body->assign('MAIN', 'Le pwd du user100 est non valide.'); 
-    }else{
-      $rep->body->assign('MAIN', 'Le pwd du user100 est valide.'); 
-    }
- 
-    return $rep; 
-  }
- 
-  /*
-  * Crée un user en session et en DB
-  */
-  function createUser(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    // creation d'un user avec le login tempuser et le mot de passe pwtempuser       
-    $newUser = jAuth::createUserObject('tempuser','pwtempuser');
-    $newUser->email = 'tempuser@cie.com';
- 
-    try{
-      $user = jAuth::saveNewUser($newUser); 
-      $rep->body->assign('MAIN', 'Le user : '. $user->login .' vient d\'être créé!'); 
-    }catch(Exception $e){
-      $rep->body->assign('MAIN', 'Impossible d\'ajouter ce nouvel utilisateur!');
-    }   
- 
-    return $rep; 
-  }
- 
-  /*
-  * Met à jour un user existant
-  */
-  function updateUser(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    $updUser = jAuth::getUser('tempuser');
-    if($updUser){
-      $updUser->email = 'jelix@cie.com';
-      try{
-        jAuth::updateUser($updUser); 
- 
-        // Pour vérifier visuelement la modification	
-        $user = jAuth::getUser('tempuser');
-        $rep->body->assign('MAIN', 'Le nouveau courriel du user tempuser : '. $user->email);
-      }catch(Exception $e){
-	$rep->body->assign('MAIN', 'La mise à jour du user tempuser à échoué! ');	
-      }
-    }else{
-      $rep->body->assign('MAIN', 'Le user tempuser n\'existe pas!');
-    }
- 
-    return $rep;
-  }
- 
-  /*
-  * Efface un user de la session et de la DB
-  */
-  function deleteUser(){
-    $rep = $this->getResponse('html');
-    $rep->bodyTpl = 'main2';
- 
-    if(jAuth::getUser('tempuser')){
-      if(jAuth::removeUser('tempuser')){
-        $rep->body->assign('MAIN', 'Le user tempuser a été effacé!');
-      }else{
-        $rep->body->assign('MAIN', 'Le user tempuser n\'a pas été effacé!');
-      }
-    }else{
-      $rep->body->assign('MAIN', 'Le user tempuser n\'existe pas!');
-    }
- 
-    return $rep;
-  }
  
   
   
@@ -453,7 +238,7 @@ return $rep;
         
         $form = jForms::fill("projetITI~newImage");
        
-                $form->saveFile('photo', jApp::wwwPath('img/Caroussel/'),$record->Idpost.'.png');
+        $form->saveFile('photo', jApp::wwwPath('img/Caroussel/'),$record->Idpost.'.png');
             
         
          
@@ -462,4 +247,85 @@ return $rep;
         
         return $this->index();
     }
+    
+    
+      function modifierProduit(){
+          $rep = $this->getResponse('html');
+          $rep->title = "Mangez-Moi";
+          $rep->bodyTpl ="ModifierProduit";
+        $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+        //CSS et JS externe
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'style3.css');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso2.js');
+        
+        $produitForm = jForms::create("projetITI~afficherProduit", $this->param('idProduit'));
+        $imagefactory2=jDao::get("produit");
+               $image = $imagefactory2->get($this->param('idProduit'));
+         $rep->body->assign('IMG', $image);
+        $produitForm->initFromDao("projetITI~produit");
+        $rep->body->assign('PRODUIT',$produitForm);
+         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
+        return $rep;
+    }
+    
+    
+    function majProduit() {
+
+        $produitFactory = jDao::get('produit');
+        $record = $produitFactory->get($this->param('IdProduit'));
+        $record->Prix = $this->param('Prix');
+        $record->NomProduit = $this->param('NomProduit');
+        $produitFactory->update($record);
+        
+        $record->Emplacement = "img/menu/".$record->IdProduit."."."jpg";
+        
+        $produitFactory->update($record);
+        
+         $form = jForms::get("projetITI~afficherProduit");
+       
+        $form->saveFile('photo', jApp::wwwPath('img/menu/'),$record->IdProduit.'.jpg');
+        
+        return $this->index();
+        }
+    
+      function addProduit() {
+          
+        // instanciation de la factory
+        $maFactory = jDao::get("projetITI~produit");
+        // creation d'un record correspondant au dao restaurant
+        $record = jDao::createRecord("projetITI~produit");
+        // on remplit le record
+        $record->NomProduit = $this->param('NomProduit');
+        $record->Prix = $this->param('Prix');
+        $record->Emplacement = "test";
+        
+        // on le sauvegarde dans la base
+        $maFactory->insert($record);
+        
+        $record->Emplacement = "img/menu/".$record->IdProduit."."."jpg";
+        
+        $maFactory->update($record);
+        
+         $form2 = jForms::get("projetITI~afficherProduit");
+       
+        $form2->saveFile('photo', jApp::wwwPath('img/menu/'),$record->IdProduit.'.jpg');
+        
+        return $this->index();
+        
+        
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

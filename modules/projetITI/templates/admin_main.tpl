@@ -50,19 +50,37 @@
 
          
     <!-- Mise en place des images des commandes -->
-<h2> Gérer les photos des produits dans la page "commande" </h2>
+<h2> Gérer les produits dans la page "commande" </h2>
 <div class="row-fluid">
 
 <ul class="thumbnails">
 
 {foreach $MENU as $COURANTMENU}
-<li class="span3">
-<a href="#" class="thumbnail">
-<img alt="260x180" style="width: 400px; height: 200px;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}"></a>
-</li>
+<li class="span2">
+<a href="{jurl  'projetITI~modifierProduit@classic', array('idProduit'=>$COURANTMENU->IdProduit)}" class="thumbnail">
+<img alt="260x180" style="width: 200px; height: 200px;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}">
+<p style="text-align: center;">{$COURANTMENU->NomProduit}</p>
+<p style="text-align: center;">{$COURANTMENU->Prix} €</p>
+</a>
+
 {/foreach}
+<li>{formfull $PRODUIT, 'projetITI~addProduit'} </li>
 </ul>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
       <!-- Mise en place de la présentation en bas -->

@@ -407,13 +407,13 @@ return $rep;
       jAuth::saveNewUser($newUser);
       return $this->index();
   }
-<<<<<<< HEAD
+
   function envoyermail (){
       
       
       
   }
-=======
+
   
   function supprimerImage(){
         $idImage =  $this->param('Idpost');
@@ -422,6 +422,4 @@ return $rep;
         $imagefactory->delete($idImage);
         return $this->index();
     }
-  
->>>>>>> [MAJ] repo
 }

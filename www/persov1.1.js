@@ -27,7 +27,6 @@ function getElements() {
         nombre = Number((un*deux).toFixed(1));
         texte += '<tr class=\"success\"><td><strong>' + ($('li[data-col=1]').eq(i).attr("nom-produit")) + '</strong><td/><td>'+un+'</td><td>' + nombre + '\u20ac <td/><tr/>';
         prixTotal += parseFloat(nombre);
-        //$('li[data-col=1]').eq(i).$('p').html("Allo");
         
       }
       

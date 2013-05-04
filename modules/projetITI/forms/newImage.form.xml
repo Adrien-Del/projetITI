@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns="http://jelix.org/ns/forms/1.1">
+    
+    
+    
+    <upload ref="photo" mimetype="image/jpeg;image/pjpeg;image/png" maxsize="200000">
+        <label>Ajoutez</label>
+    </upload>
+    
+    <submit ref="submit">
+        <label>Envoyer</label>
+    </submit>
+    
+</form> 

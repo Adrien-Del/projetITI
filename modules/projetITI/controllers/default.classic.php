@@ -47,6 +47,15 @@ class defaultCtrl extends jController {
          $listeimagecaroussel = $imagefactorycaroussel->findBy($conditioncaroussel);
          $rep->body->assign('IMGCAROUSSEL', $listeimagecaroussel);
          
+         
+         
+         $menufactory = jDao::get("produit");
+        $listemenu = $menufactory->findall();
+        $rep->body->assign('MENU',$listemenu);
+        
+        $imageForm = jForms::create("projetITI~newImage");
+        $rep->body->assign('NEWIMAGE',$imageForm);
+         
         }
         else{$rep->bodyTpl = "main";}
         //test de génération d'url pour afficher les images du caroussel
@@ -416,10 +425,41 @@ return $rep;
 
   
   function supprimerImage(){
-        $idImage =  $this->param('Idpost');
-        var_dump($idImage);
+        $idImage =  $this->param('idImage');
         $imagefactory = jDao::get("post");
         $imagefactory->delete($idImage);
+        return $this->index();
+    }
+    
+ function ajouterImage(){
+      // instanciation de la factory
+        $maFactory = jDao::get("projetITI~post");
+        // creation d'un record correspondant au dao restaurant
+        $record = jDao::createRecord("projetITI~post");
+        // on remplit le record
+        $record->Nom = "test";
+        $record->DateCreation = date('Y-m-d');
+        $record->Online = 1;
+        $record->Type = "Caroussel";
+        $record->Emplacement = "test";
+        
+        // on le sauvegarde dans la base
+        $maFactory->insert($record);
+        
+        $record->Nom = $record->Idpost;
+        $record->Emplacement = "img/Caroussel/".$record->Idpost."."."png";
+        
+        $maFactory->update($record);
+        
+        $form = jForms::fill("projetITI~newImage");
+       
+                $form->saveFile('photo', jApp::wwwPath('img/Caroussel/'),$record->Idpost.'.png');
+            
+        
+         
+        
+        
+        
         return $this->index();
     }
 }

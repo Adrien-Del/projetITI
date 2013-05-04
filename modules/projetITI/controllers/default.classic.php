@@ -117,7 +117,7 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style1.css');
-        $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.2.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.3.js');
         
         //test de génération d'url pour afficher des images
         $imagefactory = jDao::get("post");

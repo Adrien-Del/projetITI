@@ -28,6 +28,8 @@
           </div>          
     </div>  
       </div>
+
+<div class="container">
 <div>{$LOGIN_ERREUR}</div>
   <!-- Mise en place du carousel -->
   <h2> Gérer les photos du caroussel </h2>
@@ -37,7 +39,7 @@
                 {foreach $IMGCAROUSSEL as $COURANTIMGCAROUSSEL}
               <li class="span3">
                 <a onclick="return confirm('Voulez vous supprimer l\'image?');"href="{jurl 'projetITI~supprimerImage@classic', array('idImage'=>$COURANTIMGCAROUSSEL->Idpost)}" class="thumbnail">
-                  <img  alt="260x180" style="width: 400px; height: 200px;" src="{$PATH.$COURANTIMGCAROUSSEL->Emplacement}" id="{$COURANTIMGCAROUSSEL->Idpost}"></a>
+                  <img  alt="260x180" style="width: 400px; height: auto;" src="{$PATH.$COURANTIMGCAROUSSEL->Emplacement}" id="{$COURANTIMGCAROUSSEL->Idpost}"></a>
               </li>
               {/foreach}
               <li class="span2">
@@ -58,7 +60,7 @@
 {foreach $MENU as $COURANTMENU}
 <li class="span2">
 <a href="{jurl  'projetITI~modifierProduit@classic', array('idProduit'=>$COURANTMENU->IdProduit)}" class="thumbnail">
-<img alt="260x180" style="width: 200px; height: 200px;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}">
+<img alt="260x180" style="width: 200px; height: auto;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}">
 <p style="text-align: center;">{$COURANTMENU->NomProduit}</p>
 <p style="text-align: center;">{$COURANTMENU->Prix} €</p>
 </a>
@@ -69,43 +71,10 @@
 </div>
 
 
+</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-   
-      <!-- Mise en place de la présentation en bas -->
-  <div class="row-fluid">
-      <div class="span10 offset1 hero-unit">
-         
-    <ul class="thumbnails">
-    {foreach $IMG as $COURANTIMG}
-       <li class="span4">
-           <div class="thumbnail">
-                <div class="item">
-                    <img src="{$PATH.$COURANTIMG->Emplacement}" alt="">
-                       <div class="caption">
-                        <h3>{$COURANTIMG->Nom}</h3>
-                        <p>{$COURANTIMG->Contenu}</p>
-                        <p><a href="{jurl 'projetITI~afficher_commande@classic'}" class="btn btn-primary">Commander</a></p>
-                       </div>
-
-                 </div>
-             </div>
-           </li>
-       {/foreach}
-       </ul>
-   </div>
-   </div>
        
                     
                       

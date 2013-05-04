@@ -47,6 +47,26 @@
               </li>
             </ul>
           </div>
+<<<<<<< HEAD
+=======
+                      <a> MODIFIER !! </a>
+                      
+                      
+                      <!-- Mise en place des images des commandes -->
+<h2> Gérer les photos des produits dans la page "commande" </h2>
+<div class="row-fluid">
+
+<ul class="thumbnails">
+
+{foreach $MENU as $COURANTMENU}
+<li class="span3">
+<a href="#" class="thumbnail">
+<img alt="260x180" style="width: 400px; height: 200px;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}"></a>
+</li>
+{/foreach}
+</ul>
+</div>
+>>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
    
       <!-- Mise en place de la présentation en bas -->
   <div class="row-fluid">

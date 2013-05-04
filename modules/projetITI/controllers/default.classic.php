@@ -46,6 +46,9 @@ class defaultCtrl extends jController {
                $conditioncaroussel->addCondition('Online','=',1);
          $listeimagecaroussel = $imagefactorycaroussel->findBy($conditioncaroussel);
          $rep->body->assign('IMGCAROUSSEL', $listeimagecaroussel);
+         $menufactory = jDao::get("produit");
+$listemenu = $menufactory->findall();
+$rep->body->assign('MENU',$listemenu);
          
          
          

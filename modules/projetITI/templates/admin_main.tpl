@@ -47,9 +47,7 @@
               </li>
             </ul>
           </div>
-<<<<<<< HEAD
-=======
-                      <a> MODIFIER !! </a>
+
                       
                       
                       <!-- Mise en place des images des commandes -->
@@ -66,7 +64,7 @@
 {/foreach}
 </ul>
 </div>
->>>>>>> ed4f8a937d3e27e59b06015706338638cb219a14
+
    
       <!-- Mise en place de la présentation en bas -->
   <div class="row-fluid">

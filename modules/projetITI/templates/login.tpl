@@ -1,4 +1,5 @@
 {if ! $isLogged}
+    <li>
    <form class="form-inline" action="{formurl 'jauth~login:in'}" method="post" id="loginForm">
        <input type="text" name="login" id="login" size="9" value="{$login|eschtml}" class="input-small" placeholder="Pseudo" />
        <input type="password" name="password" id="password" size="9" class="input-small" placeholder="Mot de passe"/>
@@ -12,7 +13,7 @@
        <a class="btn" href="{jurl 'projetITI~creercompte@classic'}">S'inscrire</a>
        
    </form>
-       
+       </li>
 {else}
-    <p style="color: grey;margin-top: 12%;">{$user->login} | <a href="{jurl 'jauth~login:out'}" >{@jauth~auth.buttons.logout@}</a></p>
+    <li style="color: grey;margin-top:10%;">{$user->login} </li> <li> <a href="{jurl 'jauth~login:out'}" >{@jauth~auth.buttons.logout@}</a></li>
 {/if}

@@ -14,8 +14,7 @@ class defaultCtrl extends jController {
       */
       public $pluginParams = array(
             '*'        => array('auth.required' => false),
-            'affiche1' => array('auth.required' => true),
-            'afficher_commande' => array('auth.required' => true),
+            'passerCommande' => array('auth.required' => true),
       );
   
     //Fonction principale, index
@@ -34,6 +33,7 @@ class defaultCtrl extends jController {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso2.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
       
         
          if($user2->login==admin){
@@ -96,7 +96,7 @@ class defaultCtrl extends jController {
         else{
         }
         
-        
+        $rep->body->assignZone('NAVIGATION', 'navbar');
         return $rep;
     }
     
@@ -118,6 +118,7 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style1.css');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.3.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
         
         //test de génération d'url pour afficher des images
         $imagefactory = jDao::get("post");
@@ -130,11 +131,10 @@ class defaultCtrl extends jController {
         $rep->body->assign('MENU',$listemenu);
         $rep->body->assign('IDMENU',"menu");
         
-         $testconnection = jAuth::isConnected();
-         $user2 = jAuth::getUserSession();
-       $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
+         $rep->body->assignZone('NAVIGATION', 'navbar');
         
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
+        
 
         return $rep;
         
@@ -150,10 +150,10 @@ class defaultCtrl extends jController {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style3.css');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
         
-        $testconnection = jAuth::isConnected();
-        $user2 = jAuth::getUserSession();
-        $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
+
+        $rep->body->assignZone('NAVIGATION', 'navbar');
        
         return $rep;
 }
@@ -168,19 +168,15 @@ function creercompte() {
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'style3.css');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
         
-        
+        $rep->body->assignZone('NAVIGATION', 'navbar');
         $userForm = jForms::create("projetITI~newUser");
         $rep->body->assign('NEWUSER',$userForm);
         
         return $rep;
 }
 
-function LoginUtilisateur() {
-    
-}
- 
-  
   
   function AuthErrorLogin ()
 {
@@ -261,6 +257,7 @@ return $rep;
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso2.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
         
         $produitForm = jForms::create("projetITI~afficherProduit", $this->param('idProduit'));
         $imagefactory2=jDao::get("produit");
@@ -269,6 +266,7 @@ return $rep;
         $produitForm->initFromDao("projetITI~produit");
         $rep->body->assign('PRODUIT',$produitForm);
          $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
+         $rep->body->assignZone('NAVIGATION', 'navbar');
         return $rep;
     }
     
@@ -321,7 +319,9 @@ return $rep;
     
     
     
-    
+    function passerCommande(){
+        return $this->index();
+    }
     
     
     

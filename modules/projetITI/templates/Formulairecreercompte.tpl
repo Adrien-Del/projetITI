@@ -1,25 +1,8 @@
 <body>
 
 <!-- Création de la barre de navigation responsive -->
-<div class="navbar navbar-inverse">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-             </a>
-             <a class="brand" href="{jurl 'projetITI~index@classic'}">Mangez-moi</a>
-                <div class="nav-collapse collapse navbar-inverse-collapse">
-                    <ul class="nav">
-                      <li><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>
-                      <li><a href="{jurl 'projetITI~afficher_commande@classic'}">Commande</a></li>
-                      <li><a href="{jurl 'projetITI~contacter@classic'}">Contact</a></li>
-                    </ul>
-                </div>
-          </div>
-    </div>
-</div>
+
+{$NAVIGATION} 
                     
  <p class="lead">Bienvenue sur la page de création de compte.</p>
  

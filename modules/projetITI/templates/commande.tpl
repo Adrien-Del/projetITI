@@ -1,28 +1,6 @@
 <body>
 
-<!-- Création de la barre de navigation responsive -->
-<div class="navbar navbar-inverse">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-             </a>
-             <a class="brand" href="{jurl 'projetITI~index@classic'}">Mangez-moi</a>
-                <div class="nav-collapse collapse navbar-inverse-collapse">
-                    <ul class="nav">
-                      <li><a href="{jurl 'projetITI~index@classic'}">Accueil</a></li>
-                      <li class="active"><a href="{jurl 'projetITI~afficher_commande@classic'}">Commande</a></li>
-                      <li><a href="{jurl 'projetITI~contacter@classic'}">Contact</a></li>
-                      <li><div id="auth_login_zone">
-                              {$LOGIN}
-                          </div></li>
-                    </ul>
-                </div>
-          </div>
-    </div>
-</div>  
+{$NAVIGATION} 
     
     <div class="container-fluid">
   <div class="row-fluid">
@@ -46,7 +24,7 @@
         
         
         
-        <!-- Bouton asser la commande -->
+        <!-- Bouton passer la commande -->
     <a href="#myModal" role="button" class="btn" data-toggle="modal" onclick="passerCommande()">Passer la commande</a>
  
     <!-- Modal -->
@@ -63,7 +41,7 @@
           </div>
           <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Annuler</button>
-            <button class="btn btn-primary">Passer la commande</button>
+            <a class="btn btn-primary" href="{jurl  'projetITI~passerCommande@classic'}">Passer la commande</a>
           </div>
         </div>
         

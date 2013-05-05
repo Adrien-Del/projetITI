@@ -342,6 +342,8 @@ return $rep;
         $record->DateRetrait = $this->param('Date')." ".$this->param('Heure');
         $record->IdClient = $user2->login;
         $record->Contenu = $this->param('Contenu');
+        $record->Vu= false;
+        $record->Visible= true;
 
         // on le sauvegarde dans la base
         $maFactory->insert($record);
@@ -373,7 +375,11 @@ return $rep;
         
         
         $commandefactory = jDao::get("commande");
-        $listecommande = $commandefactory->findall();
+           //Création de la condition
+               $condition = jDao::createConditions();
+               $condition->addCondition('Visible','=',1);
+        
+        $listecommande = $commandefactory->findBy($condition);
         $rep->body->assign('COMMANDE',$listecommande);
         
        $testconnection = jAuth::isConnected();
@@ -383,6 +389,22 @@ return $rep;
         return $rep;
     }
     
+    
+    function notification(){
+        $produitFactory = jDao::get('commande');
+        $record = $produitFactory->get($this->param('IdCommande'));
+        $record->Vu = true;
+        $produitFactory->update($record);
+        return $this->gererCommande();
+    }
+    
+    function cacherCommande(){
+        $produitFactory = jDao::get('commande');
+        $record = $produitFactory->get($this->param('IdCommande'));
+        $record->Visible = false;
+        $produitFactory->update($record);
+        return $this->gererCommande();
+    }
     
     
 }

@@ -38,8 +38,8 @@
               <h3> Date et horaire de passage : </h3>
               <form action="{jurl  'projetITI~passerCommande@classic'}">
                 <input type="hidden" name="Contenu" id="contenuCommande"><br>
-                <input type="date" name="Date"></input>
-              <input type="time" name="Heure"></input>
+                <input type="date" name="Date" required></input>
+              <input type="time" name="Heure" required></input>
             <input type="submit" value="Passer la commande">
           </div>
           <div class="modal-footer">

@@ -49,6 +49,39 @@
 </div>
 </div>
 
+<div class="hero-unit">
+<h2> Gérer les membres </h2>
+<div class="row-fluid">
+    
+ <table class="table table-striped"> 
+<tbody>
+                <tr>
+                  <th>Nom</th>
+                  <th>Prenom</th>
+                  <th>Login</th>
+                  <th>E-mail</th>
+                  <th>Telephone</th>
+                  <th>Gérer</th>
+                </tr>
+     
+
+{foreach $MEMBRE as $COURANTMEMBRE}
+    {if $COURANTMEMBRE->login != admin}
+                <tr>
+                  <td>{$COURANTMEMBRE->nom}</td>
+                  <td>{$COURANTMEMBRE->prenom}</td>
+                  <td>{$COURANTMEMBRE->login}</td>
+                  <td><a href="mailto:#">{$COURANTMEMBRE->email}</a></td>
+                  <td>{$COURANTMEMBRE->tel}</td>
+                  <td><a onclick="return confirm('Voulez vous supprimer définitivement le membre : {$COURANTMEMBRE->login}?');" class="btn" href="{jurl 'projetITI~supprimerMembre@classic', array('idMembre'=>$COURANTMEMBRE->login)}">Supprimer</a></td>
+                </tr>
+      {/if}
+{/foreach}
+</tbody>
+</table>
+</div>
+</div>
+
 </div> 
 
  </body>

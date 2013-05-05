@@ -48,9 +48,13 @@ class defaultCtrl extends jController {
          $rep->body->assign('IMGCAROUSSEL', $listeimagecaroussel);
          
         
-         $menufactory = jDao::get("produit");
+        $menufactory = jDao::get("produit");
         $listemenu = $menufactory->findall();
         $rep->body->assign('MENU',$listemenu);
+        
+        $membrefactory = jDao::get("jlx_user");
+        $listemembre = $membrefactory->findall();
+        $rep->body->assign('MEMBRE',$listemembre);
         
         $imageForm = jForms::create("projetITI~newImage");
         $rep->body->assign('NEWIMAGE',$imageForm);
@@ -327,6 +331,13 @@ return $rep;
         return $this->index();
     }
     
+    function supprimerMembre(){
+        $idMembre =  $this->param('idMembre');
+        var_dump($idMembre);
+        $imagefactory = jDao::get("jlx_user");
+        $imagefactory->delete($idMembre);
+        return $this->index();
+    }
     
     
     

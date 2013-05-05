@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns="http://jelix.org/ns/forms/1.1">
+
+    
+                            <input ref="commande">
+                                            <label>Résumé de la commande</label>
+		</input>
+                
+		<submit ref="submit">
+		<label>Passer la commande</label>
+		</submit>
+
+</form>

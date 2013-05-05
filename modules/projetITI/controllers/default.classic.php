@@ -61,9 +61,11 @@ class defaultCtrl extends jController {
 
         $menuForm = jForms::create("projetITI~afficherProduit");
         $rep->body->assign('PRODUIT',$menuForm);
-         
+         $rep->body->assignZone('NAVIGATION', 'admin_navbar');
         }
-        else{$rep->bodyTpl = "main";}
+        else{$rep->bodyTpl = "main";
+        $rep->body->assignZone('NAVIGATION', 'navbar');
+        }
         //test de génération d'url pour afficher les images du caroussel
         $imagefactory = jDao::get("post");
                //Création de la condition
@@ -100,7 +102,7 @@ class defaultCtrl extends jController {
         else{
         }
         
-        $rep->body->assignZone('NAVIGATION', 'navbar');
+        
         return $rep;
     }
     
@@ -124,7 +126,7 @@ class defaultCtrl extends jController {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'persov1.3.js');
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
         
-        //test de génération d'url pour afficher des images
+        
         $imagefactory = jDao::get("post");
         $image = $imagefactory->get(1);
         $rep->body->assign('IMAGES', $image);
@@ -134,6 +136,9 @@ class defaultCtrl extends jController {
         $listemenu = $menufactory->findall();
         $rep->body->assign('MENU',$listemenu);
         $rep->body->assign('IDMENU',"menu");
+        
+        $commandeForm = jForms::create("projetITI~commande");
+        $rep->body->assign('COMMANDE',$commandeForm);
         
          $rep->body->assignZone('NAVIGATION', 'navbar');
         
@@ -209,7 +214,7 @@ return $rep;
     $mail->Body = 'Contenu du message texte';
     $mail->AddAddress('adriendelannoy62@gmail.com' , 'Nom du destinataire');
     $mail->Send();
-      
+      return $this->index();
   }
 
   
@@ -328,6 +333,19 @@ return $rep;
     
     
     function passerCommande(){
+        $maFactory = jDao::get("projetITI~commande");
+        // creation d'un record correspondant au dao restaurant
+        $record = jDao::createRecord("projetITI~commande");
+        // on remplit le record
+        $user2 = jAuth::getUserSession();
+        $record->DateCommande = date('Y-m-d');
+        $record->DateRetrait = $this->param('Date')." ".$this->param('Heure');
+        $record->IdClient = $user2->login;
+        $record->Contenu = $this->param('Contenu');
+
+        // on le sauvegarde dans la base
+        $maFactory->insert($record);
+        
         return $this->index();
     }
     
@@ -339,7 +357,31 @@ return $rep;
         return $this->index();
     }
     
-    
+    function gererCommande(){
+                  $rep = $this->getResponse('html');
+          $rep->title = "Mangez-Moi";
+          $rep->bodyTpl ="admin_commande";
+        $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+        //CSS et JS externe
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap-responsive.min.css');
+        $rep->addCssLink(jApp::config()->urlengine['basePath'].'style3.css');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'jquery/jquery.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'bootstrap/js/bootstrap.min.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'perso2.js');
+        $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
+        
+        
+        $commandefactory = jDao::get("commande");
+        $listecommande = $commandefactory->findall();
+        $rep->body->assign('COMMANDE',$listecommande);
+        
+       $testconnection = jAuth::isConnected();
+      
+       $rep->body->assignZone('LOGIN', 'login',array ('isLogged'=>$testconnection,'user'=>$user2));
+         $rep->body->assignZone('NAVIGATION', 'admin_navbar');
+        return $rep;
+    }
     
     
     

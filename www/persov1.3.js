@@ -41,4 +41,5 @@ function getElements() {
 function passerCommande() {
     var texte = $('#resume').html();
     $('#modalhtml').html(texte);
+    $('#contenuCommande').val(texte);
 }

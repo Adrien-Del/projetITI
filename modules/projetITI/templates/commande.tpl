@@ -20,9 +20,7 @@
         <div class="span2 center" id="total">
         <h4> Résumé de votre commande</h4>
         <p id="resume"></p>
-       
-        
-        
+          
         
         <!-- Bouton passer la commande -->
     <a href="#myModal" role="button" class="btn" data-toggle="modal" onclick="passerCommande()">Passer la commande</a>
@@ -32,12 +30,17 @@
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3 id="myModalLabel">Résumé de la commande</h3>
+            
+</form>
           </div>
           <div class="modal-body">
-              <div  id="modalhtml"></div>
+              <div  id="modalhtml"> </div>
               <h3> Date et horaire de passage : </h3>
-              <input type="date"></input>
-              <input type="time"></input>
+              <form action="{jurl  'projetITI~passerCommande@classic'}">
+                <input type="hidden" name="Contenu" id="contenuCommande"><br>
+                <input type="date" name="Date"></input>
+              <input type="time" name="Heure"></input>
+            <input type="submit" value="Passer la commande">
           </div>
           <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Annuler</button>

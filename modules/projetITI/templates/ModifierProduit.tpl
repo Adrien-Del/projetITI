@@ -4,7 +4,7 @@
 
 {$NAVIGATION} 
                     
-                    
+<div class="hero-unit">  
 <div class="row-fluid">
  <ul class="thumbnails">
     
@@ -24,6 +24,7 @@
      
 
       </div>
+</div>
 </div>
                     
 </body>

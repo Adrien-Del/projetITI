@@ -198,9 +198,13 @@ return $rep;
       return $this->index();
   }
 
-  function envoyermail (){
+  function envoyerMail (){
       
-      
+    $mail = new jMailer();
+    $mail->Subject = 'Sujet de l\'email';
+    $mail->Body = 'Contenu du message texte';
+    $mail->AddAddress('adriendelannoy62@gmail.com' , 'Nom du destinataire');
+    $mail->Send();
       
   }
 

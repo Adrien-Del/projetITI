@@ -4,9 +4,11 @@
 
 {$NAVIGATION} 
 
+
 <div class="container">
 <div>{$LOGIN_ERREUR}</div>
   <!-- Mise en place du carousel -->
+  <div class="hero-unit">
   <h2> Gérer les photos du caroussel </h2>
   <h4> Cliquez sur les images pour les supprimer </h4>
   <div class="row-fluid">
@@ -17,16 +19,17 @@
                   <img  alt="260x180" style="width: 400px; height: auto;" src="{$PATH.$COURANTIMGCAROUSSEL->Emplacement}" id="{$COURANTIMGCAROUSSEL->Idpost}"></a>
               </li>
               {/foreach}
-              <li class="span2">
-                
+            </ul>
+          </div>
+            <li class="offset4">
+                  <p> Ajouter une image </p>
                         {formfull $NEWIMAGE, 'projetITI~ajouterImage@classic'}
                 
               </li>
-            </ul>
-          </div>
-
+</div>
          
     <!-- Mise en place des images des commandes -->
+    <div class="hero-unit">
 <h2> Gérer les produits dans la page "commande" </h2>
 <div class="row-fluid">
 
@@ -44,31 +47,8 @@
 <li>{formfull $PRODUIT, 'projetITI~addProduit'} </li>
 </ul>
 </div>
-
-
 </div>
 
-
-
-       
-                    
-                      
-               
-
-
-                      
- <script type="text/javascript">
-   {literal}
-     $('.carousel').carousel('next');
-         
-     $('.carousel').carousel({
-
-        interval: 4000
-  
-      })
-   {/literal}
-  </script>
- <!--test de génération d'url pour afficher des images -->
- 
+</div> 
 
  </body>

@@ -5,7 +5,7 @@
     
     
     <upload ref="photo" mimetype="image/jpeg;image/pjpeg;image/png" maxsize="200000">
-        <label>Ajoutez</label>
+        <label> </label>
     </upload>
     
     <submit ref="submit">

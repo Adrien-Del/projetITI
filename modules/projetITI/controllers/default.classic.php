@@ -140,7 +140,11 @@ class defaultCtrl extends jController {
         $commandeForm = jForms::create("projetITI~commande");
         $rep->body->assign('COMMANDE',$commandeForm);
         
-         $rep->body->assignZone('NAVIGATION', 'navbar');
+          $user2 = jAuth::getUserSession();
+           if($user2->login==admin){
+        $rep->body->assignZone('NAVIGATION', 'admin_navbar');}
+        else{
+         $rep->body->assignZone('NAVIGATION', 'navbar');}
         
         $rep->body->assign('PATH',jApp::config()->urlengine['basePath']);
         
@@ -162,7 +166,11 @@ class defaultCtrl extends jController {
         $rep->addJsLink(jApp::config()->urlengine['basePath'].'common.v.1.js');
         
 
-        $rep->body->assignZone('NAVIGATION', 'navbar');
+         $user2 = jAuth::getUserSession();
+           if($user2->login==admin){
+        $rep->body->assignZone('NAVIGATION', 'admin_navbar');}
+        else{
+         $rep->body->assignZone('NAVIGATION', 'navbar');}
        
         return $rep;
 }

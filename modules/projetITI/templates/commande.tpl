@@ -1,6 +1,8 @@
 <body>
 
 {$NAVIGATION} 
+
+{$COMMANDE_SUCCES}
     
     <div class="container-fluid">
   <div class="row-fluid">

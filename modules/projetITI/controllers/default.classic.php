@@ -153,6 +153,15 @@ class defaultCtrl extends jController {
         
      }
      
+      function afficher_commande_succes() {
+         $rep = $this->afficher_commande();
+        $rep->body->assignZone('COMMANDE_SUCCES', 'commande_succes');
+        return $rep;
+        
+     }
+             
+     
+     
      function contacter() {
          $rep = $this->getResponse('html');
          
@@ -195,15 +204,21 @@ function creercompte() {
 }
 
   
-  function AuthErrorLogin ()
-{
-$rep = $this->getResponse('html');
-$failed = 2;
-$rep->body->assignZone('LOGIN_ERREUR', 'loginerreur',array ('failed'=>2));
-$rep->body->assign('failed', $failed);
-return $rep;
-}
+    function AuthErrorLogin ()
+  {
+    $rep = $this->getResponse('html');
+    $failed = 2;
+    $rep->body->assignZone('LOGIN_ERREUR', 'loginerreur',array ('failed'=>2));
+    $rep->body->assign('failed', $failed);
+    return $rep;
+  }
 
+   
+   function index2(){
+       $rep = $this->index();
+       $rep->body->assignZone('LOGIN_SUCCES', 'login_succes');
+       return $rep;
+   }
 
   function newUser(){
       $newUser = jAuth::createUserObject($this->param('login'),$this->param('password'));
@@ -212,7 +227,7 @@ return $rep;
       $newUser->prenom = $this->param('prenom');
       $newUser->tel = $this->param('tel');
       jAuth::saveNewUser($newUser);
-      return $this->index();
+      return $this->index2();
   }
 
   function envoyerMail (){
@@ -250,18 +265,10 @@ return $rep;
         
         $record->Nom = $record->Idpost;
         $record->Emplacement = "img/Caroussel/".$record->Idpost."."."png";
-        
         $maFactory->update($record);
-        
         $form = jForms::fill("projetITI~newImage");
-       
         $form->saveFile('photo', jApp::wwwPath('img/Caroussel/'),$record->Idpost.'.png');
-            
-        
-         
-        
-        
-        
+
         return $this->index();
     }
     
@@ -348,26 +355,14 @@ return $rep;
         $user2 = jAuth::getUserSession();
         $record->DateCommande = date('Y-m-d');
         $record->DateRetrait = $this->param('Date')." ".$this->param('Heure');
-        $record->IdClient = $user2->login;
-        
-//        $string = explode("q",$this->Contenu);
-//        $string2 = explode("menu",$string[0]);
-//        $string[0] = "";
-//        $string3 = array_merge($string, $string2);
-//        var_dump($string3);
-//        $nom = $courantcommande->IdCommande;
-//        var_dump($nom);
-//        $rep->body->assign($nom,$string3);
-        
-        
+        $record->IdClient = $user2->login;   
         $record->Contenu = $this->param('Contenu');
         $record->Vu= false;
         $record->Visible= true;
 
         // on le sauvegarde dans la base
         $maFactory->insert($record);
-        
-        return $this->index();
+        return $this->afficher_commande_succes();
     }
     
     function supprimerMembre(){

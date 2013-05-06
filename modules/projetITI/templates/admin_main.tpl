@@ -38,11 +38,12 @@
 {foreach $MENU as $COURANTMENU}
 <li class="span2">
 <a href="{jurl  'projetITI~modifierProduit@classic', array('idProduit'=>$COURANTMENU->IdProduit)}" class="thumbnail">
-<img alt="260x180" style="width: 200px; height: auto;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}">
+<div style="height: 143px;"><img alt="260x180" style="width: 200px; height: auto;" src="{$PATH.$COURANTMENU->Emplacement}" id="{$COURANTMENU->IdProduit}"></div>
 <p style="text-align: center;">{$COURANTMENU->NomProduit}</p>
 <p style="text-align: center;">{$COURANTMENU->Prix} €</p>
 </a>
 <a class="btn" href="{jurl 'projetITI~supprimerProduit@classic',array('idProduit'=>$COURANTMENU->IdProduit)}"> Supprimer </a>
+</li>
 {/foreach}
 <li>{formfull $PRODUIT, 'projetITI~addProduit'} </li>
 </ul>

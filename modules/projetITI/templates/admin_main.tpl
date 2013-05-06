@@ -42,7 +42,7 @@
 <p style="text-align: center;">{$COURANTMENU->NomProduit}</p>
 <p style="text-align: center;">{$COURANTMENU->Prix} €</p>
 </a>
-
+<a class="btn" href="{jurl 'projetITI~supprimerProduit@classic',array('idProduit'=>$COURANTMENU->IdProduit)}"> Supprimer </a>
 {/foreach}
 <li>{formfull $PRODUIT, 'projetITI~addProduit'} </li>
 </ul>

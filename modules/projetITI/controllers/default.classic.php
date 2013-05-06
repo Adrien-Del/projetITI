@@ -341,6 +341,17 @@ return $rep;
         $record->DateCommande = date('Y-m-d');
         $record->DateRetrait = $this->param('Date')." ".$this->param('Heure');
         $record->IdClient = $user2->login;
+        
+//        $string = explode("q",$this->Contenu);
+//        $string2 = explode("menu",$string[0]);
+//        $string[0] = "";
+//        $string3 = array_merge($string, $string2);
+//        var_dump($string3);
+//        $nom = $courantcommande->IdCommande;
+//        var_dump($nom);
+//        $rep->body->assign($nom,$string3);
+        
+        
         $record->Contenu = $this->param('Contenu');
         $record->Vu= false;
         $record->Visible= true;
@@ -353,9 +364,16 @@ return $rep;
     
     function supprimerMembre(){
         $idMembre =  $this->param('idMembre');
-        var_dump($idMembre);
         $imagefactory = jDao::get("jlx_user");
         $imagefactory->delete($idMembre);
+        return $this->index();
+    }
+    
+     function supprimerProduit(){
+        $idProduit =  $this->param('idProduit');
+        var_dump($idProduit);
+        $produitfactory = jDao::get("produit");
+        $produitfactory->delete($idProduit);
         return $this->index();
     }
     

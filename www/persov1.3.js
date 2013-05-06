@@ -17,6 +17,7 @@ $(function(){ //DOM Ready
 //Fonction pour afficher le nom des items + prix + prix total
 function getElements() {
     var texte = "veuillez choisir un article";
+    var data = "";
     var prixTotal = 0;
     if($('li[data-col=1]'.length)!=0){
       texte = "<table class=\"table table-striped\"><tr><th>Produit<th/><th>Quantité</th><th>Prix<th/><tr/>";
@@ -29,11 +30,12 @@ function getElements() {
         nombre = Number((un*deux).toFixed(1));
         texte += '<tr class=\"success\"><td><strong>' + ($('li[data-col=1]').eq(i).attr("nom-produit")) + '</strong><td/><td>'+un+'</td><td>' + nombre + '\u20ac <td/><tr/>';
         prixTotal += parseFloat(nombre);
-        
+        data += un + " " + ($('li[data-col=1]').eq(i).attr("nom-produit")) + " \\";
       }
-      
       texte += "</table><br/><strong> PrixTotal " + prixTotal + ' \u20ac</strong>';
+      data += "\n Prix Total " + prixTotal +" \u20ac";
       $('#resume').html(texte);
+      $('#contenuCommande').val(data);
     }
   };
   
@@ -41,5 +43,5 @@ function getElements() {
 function passerCommande() {
     var texte = $('#resume').html();
     $('#modalhtml').html(texte);
-    $('#contenuCommande').val(texte);
+
 }

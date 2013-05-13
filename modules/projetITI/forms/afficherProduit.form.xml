@@ -6,7 +6,7 @@
     <hidden ref="IdProduit"/>
     <hidden ref="Emplacement"/>
     
-    <upload ref="photo" mimetype="image/jpeg;image/pjpeg;image/png" maxsize="200000">
+    <upload ref="photo" mimetype="image/jpeg;image/pjpeg;image/png" maxsize="2000000">
         <label> </label>
     </upload>
     

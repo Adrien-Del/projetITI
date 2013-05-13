@@ -1,15 +1,22 @@
 <?php
+
 /**
 * @package   ProjetITI
 * @subpackage ProjetITI
-* @author    Adrien DELANNOY
-* @copyright 2013 Adrien DELANNOY
+* @author   Adrien DELANNOY - Arthur de BONNEVILLE
+* @copyright 2013 Adrien DELANNOY - Arthur de BONNEVILLE
 * @license    All rights reserved
+*/
+
+
+/**
+* defaultCtrl est la classe principale de Jelix.
+* Dans cette classe sont présentes les fonctions du controller
 */
 
 class defaultCtrl extends jController {
     
-        /*
+      /**
       * Définition des accès gérés par jAuth
       */
       public $pluginParams = array(
@@ -17,7 +24,11 @@ class defaultCtrl extends jController {
             'passerCommande' => array('auth.required' => true),
       );
   
-    //Fonction principale, index
+/**
+* Fonction index() affiche la page d'acceuil du site
+* Elle possède deux cas différents 1-admin 2-utilisateur
+*
+*/
     function index() {
         $rep = $this->getResponse('html');
         $user2 = jAuth::getUserSession();
@@ -106,6 +117,11 @@ class defaultCtrl extends jController {
         return $rep;
     }
     
+    
+/**
+* Affiche la page commande en utilisant l'API gridster
+*/
+    
      function afficher_commande() {
          $rep = $this->getResponse('html');
          
@@ -153,6 +169,9 @@ class defaultCtrl extends jController {
         
      }
      
+/**
+* Affiche la zone de succès lors du passage de la commande
+*/
       function afficher_commande_succes() {
          $rep = $this->afficher_commande();
         $rep->body->assignZone('COMMANDE_SUCCES', 'commande_succes');
@@ -161,7 +180,9 @@ class defaultCtrl extends jController {
      }
              
      
-     
+/**
+* Affiche la page contact
+*/ 
      function contacter() {
          $rep = $this->getResponse('html');
          
@@ -184,6 +205,9 @@ class defaultCtrl extends jController {
         return $rep;
 }
 
+/**
+* Génère la zone de formulaire de création de compte et l'envoie dans une variable 'NEWUSER'
+*/
 function creercompte() {
          $rep = $this->getResponse('html');
          
@@ -203,7 +227,9 @@ function creercompte() {
         return $rep;
 }
 
-  
+/**
+* Récupère l'évènement d'échec d'authentification et génère la zone erreur qui est envoyée dans une variable 'LOGIN_ERREUR'
+*/
     function AuthErrorLogin ()
   {
     $rep = $this->getResponse('html');
@@ -213,13 +239,19 @@ function creercompte() {
     return $rep;
   }
 
-   
+
+/**
+* Génère la zone succès lors du login et l'envoie dans la variable 'LOGIN_SUCCESS' et effectue la redirection vers index
+*/
    function index2(){
        $rep = $this->index();
        $rep->body->assignZone('LOGIN_SUCCES', 'login_succes');
        return $rep;
    }
 
+/**
+* Récupère les données envoyées dans le formulaire de création de compte et fait l'enregistrement en base de données
+*/
   function newUser(){
       $newUser = jAuth::createUserObject($this->param('login'),$this->param('password'));
       $newUser->email = $this->param('email');
@@ -230,24 +262,19 @@ function creercompte() {
       return $this->index2();
   }
 
-  function envoyerMail (){
-      
-    $mail = new jMailer();
-    $mail->Subject = 'Sujet de l\'email';
-    $mail->Body = 'Contenu du message texte';
-    $mail->AddAddress('adriendelannoy62@gmail.com' , 'Nom du destinataire');
-    $mail->Send();
-      return $this->index();
-  }
-
-  
+ /**
+* Supprime en base de données l'image passée en paramètre
+*/
   function supprimerImage(){
         $idImage =  $this->param('idImage');
         $imagefactory = jDao::get("post");
         $imagefactory->delete($idImage);
         return $this->index();
     }
-    
+
+/**
+* Ajoute en base de données l'image passée en paramètre
+*/
  function ajouterImage(){
       // instanciation de la factory
         $maFactory = jDao::get("projetITI~post");
@@ -272,7 +299,9 @@ function creercompte() {
         return $this->index();
     }
     
-    
+/**
+* Modifie en base de données l'image passée en paramètre
+*/
       function modifierProduit(){
           $rep = $this->getResponse('html');
           $rep->title = "Mangez-Moi";
@@ -298,7 +327,9 @@ function creercompte() {
         return $rep;
     }
     
-    
+/**
+* Modifie en base de données le produit passé en paramètre
+*/
     function majProduit() {
 
         $produitFactory = jDao::get('produit');
@@ -317,7 +348,10 @@ function creercompte() {
         
         return $this->index();
         }
-    
+
+/**
+* Ajoute en base de données le produit passé en paramètre
+*/
       function addProduit() {
           
         // instanciation de la factory
@@ -331,13 +365,9 @@ function creercompte() {
         
         // on le sauvegarde dans la base
         $maFactory->insert($record);
-        
         $record->Emplacement = "img/menu/".$record->IdProduit."."."jpg";
-        
         $maFactory->update($record);
-        
-         $form2 = jForms::get("projetITI~afficherProduit");
-       
+        $form2 = jForms::get("projetITI~afficherProduit");
         $form2->saveFile('photo', jApp::wwwPath('img/menu/'),$record->IdProduit.'.jpg');
         
         return $this->index();
@@ -346,7 +376,9 @@ function creercompte() {
         }
     
     
-    
+/**
+* Récupère le contenu de la commande et l'envoie en base de données
+*/
     function passerCommande(){
         $maFactory = jDao::get("projetITI~commande");
         // creation d'un record correspondant au dao restaurant
@@ -364,14 +396,20 @@ function creercompte() {
         $maFactory->insert($record);
         return $this->afficher_commande_succes();
     }
-    
+
+/**
+* Supprime le membre passé en paramètre de la base de données
+*/
     function supprimerMembre(){
         $idMembre =  $this->param('idMembre');
         $imagefactory = jDao::get("jlx_user");
         $imagefactory->delete($idMembre);
         return $this->index();
     }
-    
+
+/**
+* Supprime le produit passé en paramètre de la base de données
+*/
      function supprimerProduit(){
         $idProduit =  $this->param('idProduit');
         var_dump($idProduit);
@@ -379,11 +417,14 @@ function creercompte() {
         $produitfactory->delete($idProduit);
         return $this->index();
     }
-    
+
+/**
+* Envoie les commandes visibles à la vue
+*/
     function gererCommande(){
-                  $rep = $this->getResponse('html');
-          $rep->title = "Mangez-Moi";
-          $rep->bodyTpl ="admin_commande";
+        $rep = $this->getResponse('html');
+        $rep->title = "Mangez-Moi";
+        $rep->bodyTpl ="admin_commande";
         $rep->addHeadContent('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
         //CSS et JS externe
         $rep->addCssLink(jApp::config()->urlengine['basePath'].'bootstrap/css/bootstrap.min.css');
@@ -410,7 +451,9 @@ function creercompte() {
         return $rep;
     }
     
-    
+/**
+* Gère les notifications de gestion des commandes pour l'interface administrateur
+*/
     function notification(){
         $produitFactory = jDao::get('commande');
         $record = $produitFactory->get($this->param('IdCommande'));
@@ -418,7 +461,10 @@ function creercompte() {
         $produitFactory->update($record);
         return $this->gererCommande();
     }
-    
+
+/**
+* Gère la visibilité des commandes pour l'interface administrateur
+*/
     function cacherCommande(){
         $produitFactory = jDao::get('commande');
         $record = $produitFactory->get($this->param('IdCommande'));

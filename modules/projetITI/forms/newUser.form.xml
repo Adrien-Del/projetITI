@@ -30,7 +30,9 @@
                                             <alert type="invalid">Le format de votre numéro de tééphone est invalide</alert>
 		</input>
                 
-                            
+                             <captcha ref="antispam">
+                                <label>Vérification anti-spam</label>
+                             </captcha>
 
 		<submit ref="submit">
 		<label>Ajouter</label>

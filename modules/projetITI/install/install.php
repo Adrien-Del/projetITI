@@ -1,10 +1,10 @@
 <?php
 /**
-* @package   projetITI
-* @subpackage projetITI
-* @author    your name
-* @copyright 2011 your name
-* @link      http://www.yourwebsite.undefined
+* Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE
+* @package   ProjetITI
+* @subpackage ProjetITI
+* @author   Adrien DELANNOY - Arthur de BONNEVILLE
+* @copyright 2013 Adrien DELANNOY - Arthur de BONNEVILLE
 * @license    All rights reserved
 */
 

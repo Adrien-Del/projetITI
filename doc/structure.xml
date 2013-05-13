@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="application.init.php" hash="5675b975d0cc37ebbd445312902474c6" package="ProjetITI\ProjetITI">
+    <docblock line="2">
+      <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+      <long-description/>
+      <tag line="2" name="package" description="ProjetITI"/>
+      <tag line="2" name="subpackage" description="ProjetITI"/>
+      <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="11" type="Require" package="Default">
+      <name/>
+    </include>
+  </file>
+  <file path="cmd.php" hash="1ced7b9e7a9653e99d63316246d8c07e" package="ProjetITI\ProjetITI">
+    <docblock line="2">
+      <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+      <long-description/>
+      <tag line="2" name="package" description="ProjetITI"/>
+      <tag line="2" name="subpackage" description="ProjetITI"/>
+      <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="10" type="Require" package="Default">
+      <name/>
+    </include>
+    <include line="11" type="Require" package="Default">
+      <name/>
+    </include>
+  </file>
+  <file path="install\installer.php" hash="2e1004cae393658ae5cc8c20c3b0fbde" package="projetITI">
+    <docblock line="2">
+      <description/>
+      <long-description/>
+      <tag line="2" name="package" description="projetITI"/>
+      <tag line="2" name="author" description="your name"/>
+      <tag line="2" name="copyright" description="2011 your name"/>
+      <tag line="2" name="link" description="http://www.yourwebsite.undefined" link="http://www.yourwebsite.undefined"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="10" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file install\installer.php</critical>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\controllers\default.classic.php" hash="aacf7d301fe65bddc40c38bcb4a8191b" package="ProjetITI\ProjetITI">
+    <docblock line="3">
+      <description/>
+      <long-description/>
+      <tag line="3" name="package" description="ProjetITI"/>
+      <tag line="3" name="subpackage" description="ProjetITI"/>
+      <tag line="3" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="3" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="3" name="license" description="All rights reserved"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends>\jController</extends>
+      <name>defaultCtrl</name>
+      <full_name>\defaultCtrl</full_name>
+      <docblock line="12">
+        <description>defaultCtrl est la classe principale de Jelix.</description>
+        <long-description>&lt;p&gt;Dans cette classe sont présentes les fonctions du controller&lt;/p&gt;</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="22" namespace="global" package="Default">
+        <name>$pluginParams</name>
+        <default>array('*' =&gt; array('auth.required' =&gt; false), 'passerCommande' =&gt; array('auth.required' =&gt; true))</default>
+        <docblock line="19">
+          <description>Définition des accès gérés par jAuth</description>
+          <long-description/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Default">
+        <name>index</name>
+        <full_name>index</full_name>
+        <docblock line="27">
+          <description>Fonction index() affiche la page d'acceuil du site
+Elle possède deux cas différents 1-admin 2-utilisateur</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="Default">
+        <name>afficher_commande</name>
+        <full_name>afficher_commande</full_name>
+        <docblock line="121">
+          <description>Affiche la page commande en utilisant l'API gridster</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="175" package="Default">
+        <name>afficher_commande_succes</name>
+        <full_name>afficher_commande_succes</full_name>
+        <docblock line="172">
+          <description>Affiche la zone de succès lors du passage de la commande</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="186" package="Default">
+        <name>contacter</name>
+        <full_name>contacter</full_name>
+        <docblock line="183">
+          <description>Affiche la page contact</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="211" package="Default">
+        <name>creercompte</name>
+        <full_name>creercompte</full_name>
+        <docblock line="208">
+          <description>Génère la zone de formulaire de création de compte et l'envoie dans une variable 'NEWUSER'</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="233" package="Default">
+        <name>AuthErrorLogin</name>
+        <full_name>AuthErrorLogin</full_name>
+        <docblock line="230">
+          <description>Récupère l'évènement d'échec d'authentification et génère la zone erreur qui est envoyée dans une variable 'LOGIN_ERREUR'</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="246" package="Default">
+        <name>index2</name>
+        <full_name>index2</full_name>
+        <docblock line="243">
+          <description>Génère la zone succès lors du login et l'envoie dans la variable 'LOGIN_SUCCESS' et effectue la redirection vers index</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="255" package="Default">
+        <name>newUser</name>
+        <full_name>newUser</full_name>
+        <docblock line="252">
+          <description>Récupère les données envoyées dans le formulaire de création de compte et fait l'enregistrement en base de données</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="268" package="Default">
+        <name>supprimerImage</name>
+        <full_name>supprimerImage</full_name>
+        <docblock line="265">
+          <description>Supprime en base de données l'image passée en paramètre</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="278" package="Default">
+        <name>ajouterImage</name>
+        <full_name>ajouterImage</full_name>
+        <docblock line="275">
+          <description>Ajoute en base de données l'image passée en paramètre</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="305" package="Default">
+        <name>modifierProduit</name>
+        <full_name>modifierProduit</full_name>
+        <docblock line="302">
+          <description>Modifie en base de données l'image passée en paramètre</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="333" package="Default">
+        <name>majProduit</name>
+        <full_name>majProduit</full_name>
+        <docblock line="330">
+          <description>Modifie en base de données le produit passé en paramètre</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="355" package="Default">
+        <name>addProduit</name>
+        <full_name>addProduit</full_name>
+        <docblock line="352">
+          <description>Ajoute en base de données le produit passé en paramètre</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="382" package="Default">
+        <name>passerCommande</name>
+        <full_name>passerCommande</full_name>
+        <docblock line="379">
+          <description>Récupère le contenu de la commande et l'envoie en base de données</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="403" package="Default">
+        <name>supprimerMembre</name>
+        <full_name>supprimerMembre</full_name>
+        <docblock line="400">
+          <description>Supprime le membre passé en paramètre de la base de données</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="413" package="Default">
+        <name>supprimerProduit</name>
+        <full_name>supprimerProduit</full_name>
+        <docblock line="410">
+          <description>Supprime le produit passé en paramètre de la base de données</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="424" package="Default">
+        <name>gererCommande</name>
+        <full_name>gererCommande</full_name>
+        <docblock line="421">
+          <description>Envoie les commandes visibles à la vue</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="457" package="Default">
+        <name>notification</name>
+        <full_name>notification</full_name>
+        <docblock line="454">
+          <description>Gère les notifications de gestion des commandes pour l'interface administrateur</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="468" package="Default">
+        <name>cacherCommande</name>
+        <full_name>cacherCommande</full_name>
+        <docblock line="465">
+          <description>Gère la visibilité des commandes pour l'interface administrateur</description>
+          <long-description/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="3" code="50008">No short description for file modules\projetITI\controllers\default.classic.php</critical>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\install\install.php" hash="5c1eb93e0730aa0a91c731113cf2cc90" package="Default">
+    <class final="false" abstract="false" namespace="global" line="12" package="ProjetITI\ProjetITI">
+      <extends>\jInstallerModule</extends>
+      <name>projetITIModuleInstaller</name>
+      <full_name>\projetITIModuleInstaller</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description></long-description>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="ProjetITI\ProjetITI">
+        <name>install</name>
+        <full_name>install</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\install\install.php</error>
+      <error line="14" code="50010">No DocBlock was found for method install()</error>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\zones\admin_navbar.zone.php" hash="1486d27314f7ec8af37fdaf7231a468c" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="ProjetITI\ProjetITI">
+      <extends>\jZone</extends>
+      <name>admin_navbarZone</name>
+      <full_name>\admin_navbarZone</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description/>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$_tplname</name>
+        <default>'admin_navbar'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="13" package="ProjetITI\ProjetITI">
+        <name>_prepareTpl</name>
+        <full_name>_prepareTpl</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\zones\admin_navbar.zone.php</error>
+      <error line="11" code="50018">No DocBlock was found for property $_tplname</error>
+      <error line="13" code="50010">No DocBlock was found for method _prepareTpl()</error>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\zones\commande_succes.zone.php" hash="5729ea758d7c6f5aaadbcdc8623084d8" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="ProjetITI\ProjetITI">
+      <extends>\jZone</extends>
+      <name>commande_succesZone</name>
+      <full_name>\commande_succesZone</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description/>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$_tplname</name>
+        <default>'commande_succes'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="13" package="ProjetITI\ProjetITI">
+        <name>_prepareTpl</name>
+        <full_name>_prepareTpl</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\zones\commande_succes.zone.php</error>
+      <error line="11" code="50018">No DocBlock was found for property $_tplname</error>
+      <error line="13" code="50010">No DocBlock was found for method _prepareTpl()</error>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\zones\login.zone.php" hash="86bc96fc01f80ffa8c7698fd659a373a" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="ProjetITI\ProjetITI">
+      <extends>\jZone</extends>
+      <name>loginZone</name>
+      <full_name>\loginZone</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description/>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$_tplname</name>
+        <default>'login'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="13" package="ProjetITI\ProjetITI">
+        <name>_prepareTpl</name>
+        <full_name>_prepareTpl</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\zones\login.zone.php</error>
+      <error line="11" code="50018">No DocBlock was found for property $_tplname</error>
+      <error line="13" code="50010">No DocBlock was found for method _prepareTpl()</error>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\zones\loginerreur.zone.php" hash="0270f0de2f1f32f10d8ad91c71e16d60" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="ProjetITI\ProjetITI">
+      <extends>\jZone</extends>
+      <name>loginerreurZone</name>
+      <full_name>\loginerreurZone</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description/>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$_tplname</name>
+        <default>'login_erreur'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="13" package="ProjetITI\ProjetITI">
+        <name>_prepareTpl</name>
+        <full_name>_prepareTpl</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\zones\loginerreur.zone.php</error>
+      <error line="11" code="50018">No DocBlock was found for property $_tplname</error>
+      <error line="13" code="50010">No DocBlock was found for method _prepareTpl()</error>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\zones\login_succes.zone.php" hash="558fcce4d4ee6102f3f5a643658a5356" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="ProjetITI\ProjetITI">
+      <extends>\jZone</extends>
+      <name>login_succesZone</name>
+      <full_name>\login_succesZone</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description/>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$_tplname</name>
+        <default>'login_succes'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="13" package="ProjetITI\ProjetITI">
+        <name>_prepareTpl</name>
+        <full_name>_prepareTpl</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\zones\login_succes.zone.php</error>
+      <error line="11" code="50018">No DocBlock was found for property $_tplname</error>
+      <error line="13" code="50010">No DocBlock was found for method _prepareTpl()</error>
+    </parse_markers>
+  </file>
+  <file path="modules\projetITI\zones\navbar.zone.php" hash="29544daec8eeb9657195cf0e9af04fc9" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="ProjetITI\ProjetITI">
+      <extends>\jZone</extends>
+      <name>navbarZone</name>
+      <full_name>\navbarZone</full_name>
+      <docblock line="2">
+        <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+        <long-description/>
+        <tag line="2" name="package" description="ProjetITI"/>
+        <tag line="2" name="subpackage" description="ProjetITI"/>
+        <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+        <tag line="2" name="license" description="All rights reserved"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$_tplname</name>
+        <default>'navbar'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="13" package="ProjetITI\ProjetITI">
+        <name>_prepareTpl</name>
+        <full_name>_prepareTpl</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file modules\projetITI\zones\navbar.zone.php</error>
+      <error line="11" code="50018">No DocBlock was found for property $_tplname</error>
+      <error line="13" code="50010">No DocBlock was found for method _prepareTpl()</error>
+    </parse_markers>
+  </file>
+  <file path="responses\adminHtmlResponse.class.php" hash="bbc07abc5e4f188bb420518f548445f9" package="ProjetITI\ProjetITI">
+    <docblock line="2">
+      <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+      <long-description></long-description>
+      <tag line="2" name="package" description="ProjetITI"/>
+      <tag line="2" name="subpackage" description="ProjetITI"/>
+      <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="11" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="13" package="Default">
+      <extends>\jResponseHtml</extends>
+      <name>adminHtmlResponse</name>
+      <full_name>\adminHtmlResponse</full_name>
+      <property final="false" static="false" visibility="public" line="15" namespace="global" package="Default">
+        <name>$bodyTpl</name>
+        <default>'master_admin~main'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="24" package="Default">
+        <name>doAfterActions</name>
+        <full_name>doAfterActions</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="13" code="50000">No DocBlock was found for \adminHtmlResponse</error>
+      <error line="15" code="50018">No DocBlock was found for property $bodyTpl</error>
+      <error line="17" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="24" code="50010">No DocBlock was found for method doAfterActions()</error>
+    </parse_markers>
+  </file>
+  <file path="responses\adminLoginHtmlResponse.class.php" hash="7156e3608e14167dba6f67530e137649" package="ProjetITI\ProjetITI">
+    <docblock line="2">
+      <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+      <long-description></long-description>
+      <tag line="2" name="package" description="ProjetITI"/>
+      <tag line="2" name="subpackage" description="ProjetITI"/>
+      <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="12" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="14" package="Default">
+      <extends>\jResponseHtml</extends>
+      <name>adminLoginHtmlResponse</name>
+      <full_name>\adminLoginHtmlResponse</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="22" package="Default">
+        <name>doAfterActions</name>
+        <full_name>doAfterActions</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="14" code="50000">No DocBlock was found for \adminLoginHtmlResponse</error>
+      <error line="16" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="22" code="50010">No DocBlock was found for method doAfterActions()</error>
+    </parse_markers>
+  </file>
+  <file path="responses\myHtmlResponse.class.php" hash="1350d58dc2f46dd29f39cfb8d132d1ab" package="ProjetITI\ProjetITI">
+    <docblock line="2">
+      <description>Projet ITI - Mangez Moi - Adrien DELANNOY / Arthur de BONNEVILLE</description>
+      <long-description></long-description>
+      <tag line="2" name="package" description="ProjetITI"/>
+      <tag line="2" name="subpackage" description="ProjetITI"/>
+      <tag line="2" name="author" description="Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="copyright" description="2013 Adrien DELANNOY - Arthur de BONNEVILLE"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="12" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="14" package="Default">
+      <extends>\jResponseHtml</extends>
+      <name>myHtmlResponse</name>
+      <full_name>\myHtmlResponse</full_name>
+      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
+        <name>$bodyTpl</name>
+        <default>'projetITI~main'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="24" package="Default">
+        <name>doAfterActions</name>
+        <full_name>doAfterActions</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="14" code="50000">No DocBlock was found for \myHtmlResponse</error>
+      <error line="16" code="50018">No DocBlock was found for property $bodyTpl</error>
+      <error line="18" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="24" code="50010">No DocBlock was found for method doAfterActions()</error>
+    </parse_markers>
+  </file>
+  <file path="tests\runtests.php" hash="c53fd8f0033babad77ef040a2d6674cd" package="Default">
+    <include line="3" type="Require" package="Default">
+      <name/>
+    </include>
+    <include line="5" type="Require" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file tests\runtests.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\admin\auth.coord.ini.php" hash="8d2b08589fad3126b2ebaa765f545a31" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\admin\auth.coord.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\admin\config.ini.php" hash="33de0939cb0313bc81d271e5b6625f37" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\admin\config.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\defaultconfig.ini.php" hash="42df011227f906e3f9f6345c4f8b1167" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\defaultconfig.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\index\auth.coord.ini.php" hash="981e24b2ed67916a4b2a2db0c227bb94" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\index\auth.coord.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\index\config.ini.php" hash="8b1797ba00f4d0891147156bd8062f1d" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\index\config.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\installer.ini.php" hash="f829c9d0f7c3cc873441e85c98c1e42b" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\installer.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\preferences.ini.php" hash="303b74cd5825218b7d369c258832162f" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\preferences.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="var\config\profiles.ini.php" hash="37baaf05c8e689437048873164388b45" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file var\config\profiles.ini.php</error>
+    </parse_markers>
+  </file>
+  <file path="www\index.php" hash="afcab2007f8e32063ec452ddc6a32b9e" package="projetITI\">
+    <docblock line="2">
+      <description/>
+      <long-description/>
+      <tag line="2" name="package" description="projetITI"/>
+      <tag line="2" name="subpackage" description=""/>
+      <tag line="2" name="author" description="your name"/>
+      <tag line="2" name="copyright" description="2011 your name"/>
+      <tag line="2" name="link" description="http://www.yourwebsite.undefined" link="http://www.yourwebsite.undefined"/>
+      <tag line="2" name="license" description="All rights reserved"/>
+    </docblock>
+    <include line="11" type="Require" package="Default">
+      <name>../application.init.php</name>
+    </include>
+    <include line="12" type="Require" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file www\index.php</critical>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="ProjetITI" full_name="ProjetITI">
+    <package name="ProjetITI" full_name="ProjetITI\ProjetITI"/>
+  </package>
+  <package name="projetITI" full_name="projetITI">
+    <package name="" full_name="projetITI\"/>
+  </package>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

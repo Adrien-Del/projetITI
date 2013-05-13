@@ -4,7 +4,7 @@
 
     
                             <input ref="commande">
-                                            <label>Résumé de la commande</label>
+                               <label>Résumé de la commande</label>
 		</input>
                 
 		<submit ref="submit">
